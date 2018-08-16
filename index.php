@@ -45,65 +45,61 @@ if ($result->num_rows > 0) {
 if ($hasApplicantDetails) {
 ?>
 
-        <!-- CONTESTS AVAILABLE -->
-        <!-- if there is a record for the logged in user in the database then display contests available -->
-            <div class="row clearfix">
-                <div class="col-md-12 column">
-                    <h4 class="text-center">The <?php echo $contestTitle; ?> hosts a variety of contests and prizes for students at the University of Michigan.</h4>
-                    <dl>
-                        <dt>
-                            Contests
-                        </dt>
-                        <dd>
-                          There are three Contests held each year. These contests require enrollment in a qualifying writing course.
-                            </dd>
-                    </dl>
-                </div>
+<!-- CONTESTS AVAILABLE -->
+<!-- if there is a record for the logged in user in the database then display contests available -->
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+          <?php if (!empty($info_header)) {
+                  $html = '<h2 class="text-center">' . $info_header . '</h2>';
+                  $html .= '<h4 class="text-left">' . $info_body . '</h4>';
+                  echo $html;
+                } else { echo ''; }
+          ?>
+        </div>
+    </div>
+    <div id="instructions">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h5 class='p-1 bg-dark text-white'>How to submit an entry:</h5>
+                <ol>
+                    <li>Click the ( <span class="text-success"><i class="fas fa-pencil-alt"></i></span> ) button adjacent to the name of the contest you’d like to enter.</li>
+                    <li>Complete the form and click the ( <span class="btn btn-success btn-sm disabled">Upload Application</span> ) button.</li>
+                    <li>Click the ( <span class="text-primary"><i class="fas fa-file"></i></span> ) button to review your submission.</li>
+                </ol>
+                <ul>
+                    <li><em>NOTE: Be sure your profile is up to date before submitting your entry.</em> <a role="button" class="btn btn-outline-dark btn-sm" href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle fa-lg text-info"></i></a></li>
+                    <li><em>NOTE: The pen name in your profile must match the one on your pdf; your real name may <u>not</u> be used.</em></li>
+                    <li><em>NOTE: You will need to upload a separate application for each entry.</em></li>
+                </ul>
             </div>
-            <div id="instructions">
-                <div class="row clearfix">
-                    <div class="col-md-12 column">
-                        <h3>Instructions:</h3>
-                        <ol>
-                            <li>Click the ( <span class="text-success"><i class="fas fa-pencil-alt"></i></span> ) button adjacent to the name of the contest you’d like to enter.</li>
-                            <li>Complete the form and click the ( <span class="btn btn-success btn-sm disabled">Upload Application</span> ) button.</li>
-                            <li>Click the ( <span class="text-primary"><i class="fas fa-file"></i></span> ) button to review your submission.</li>
-                        </ol>
-                        <ul>
-                            <li><em>NOTE: You will need to upload a separate application for each genre in the Hopwood Contest and poem in the Rapaport Contest.</em></li>
-                            <li><em>NOTE: Be sure your profile is up to date before submitting your entry.</em> <a href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle text-info"></i></a></li>
-                            <li><em>NOTE: The pen name in your</em> <a href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle text-info"></i></a> <em>must match the one on your pdf; your real name may <u>not</u> be used.</em></li>
-                        </ul>
-                        <p><a href='mailComment.php'><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Questions or Comments</a></p>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <hr>
+    <div id="contestList">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h4 class="text-left text-muted">These are the contests currently available to you:</h4>
+                <!--<a href="detailEdit.php" class="btn btn-info btn-xs" type="button">keep your profile up to date</a>-->
+                <div id="availableEntry"></div>
             </div>
-
-            <div id="contestList">
-                <div class="row clearfix">
-                    <div class="col-md-12 column">
-                        <h4 class="text-left text-muted">These are the contests currently available to you:</h4>
-                        <!--<a href="detailEdit.php" class="btn btn-info btn-xs" type="button">keep your profile up to date</a>-->
-                        <div id="availableEntry"></div>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Contest history: display the contests that the logged in user has applied to -->
+    <div id="appHistory">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h4 class="text-left text-muted">These are the contests that you have entered:</h4>
+                <div id="currentEntry"></div>
             </div>
-            <hr>
-            <!-- Contest history: display the contests that the logged in user has applied to -->
-            <div id="appHistory">
-                <div class="row clearfix">
-                    <div class="col-md-12 column">
-                        <h4 class="text-left text-muted">These are the contests that you have entered:</h4>
-                        <div id="currentEntry"></div>
-                    </div>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-md-12 column well">
-                        <h5 class="text-left text-muted">These are inactivated contest entries <em>(mostly from past contests)</em>:</h5>
-                        <div id="non_active_Entry"></div>
-                    </div>
-                </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12 column well">
+                <h5 class="text-left text-muted">These are inactivated contest entries <em>(mostly from past contests)</em>:</h5>
+                <div id="non_active_Entry"></div>
             </div>
+        </div>
+    </div>
 
 <?php
 } else {
