@@ -48,7 +48,7 @@ if ($hasApplicantDetails) {
 <!-- CONTESTS AVAILABLE -->
 <!-- if there is a record for the logged in user in the database then display contests available -->
     <div class="row clearfix">
-        <div class="col-md-12 column">
+        <div class="col">
           <?php if (!empty($info_header)) {
                   $html = '<h2 class="text-center">' . $info_header . '</h2>';
                   $html .= '<h4 class="text-left">' . $info_body . '</h4>';
@@ -59,7 +59,7 @@ if ($hasApplicantDetails) {
     </div>
     <div id="instructions">
         <div class="row clearfix">
-            <div class="col-md-12 column">
+            <div class="col">
                 <h5 class='p-1 bg-dark text-white'>How to submit an entry:</h5>
                 <ol>
                     <li>Click the ( <span class="text-success"><i class="fas fa-pencil-alt"></i></span> ) button adjacent to the name of the contest you’d like to enter.</li>
@@ -77,7 +77,7 @@ if ($hasApplicantDetails) {
     <hr>
     <div id="contestList">
         <div class="row clearfix">
-            <div class="col-md-12 column">
+            <div class="col">
                 <h4 class="text-left text-muted">These are the contests currently available to you:</h4>
                 <!--<a href="detailEdit.php" class="btn btn-info btn-xs" type="button">keep your profile up to date</a>-->
                 <div id="availableEntry"></div>
@@ -88,15 +88,19 @@ if ($hasApplicantDetails) {
     <!-- Contest history: display the contests that the logged in user has applied to -->
     <div id="appHistory">
         <div class="row clearfix">
-            <div class="col-md-12 column">
+            <div class="col">
                 <h4 class="text-left text-muted">These are the contests that you have entered:</h4>
                 <div id="currentEntry"></div>
             </div>
         </div>
         <div class="row clearfix">
-            <div class="col-md-12 column well">
-                <h5 class="text-left text-muted">These are inactivated contest entries <em>(mostly from past contests)</em>:</h5>
-                <div id="non_active_Entry"></div>
+            <div class="col">
+              <div class="card bg-light">
+                <h5 class="card-header text-muted">These are inactivated contest entries <em>(mostly from past contests)</em>:</h5>
+                <div class="card-body">
+                  <div id="non_active_Entry"></div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -108,7 +112,7 @@ if ($hasApplicantDetails) {
   <form id="formBasicInfo" action="insertApplicant.php" method="post">
         <div id="basicInfo" >
             <div class="row clearfix">
-                <div class="col-md-12 column">
+                <div class="col">
                 <h4 class="text-left text-muted">Before you can apply for a contest you need to enter some basic information about yourself</h4>
 
 
