@@ -44,24 +44,6 @@ if ($result->num_rows > 0) {
 <?php
 if ($hasApplicantDetails) {
 ?>
-        <div class="modal fade" id="utility" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog ">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h5 class="modal-title" id="myModalLabel">Rules and Awards</h5>
-              </div>
-              <div class="modal-body" id="utility_body">
-                <p>One fine body&hellip;</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
 
         <!-- CONTESTS AVAILABLE -->
         <!-- if there is a record for the logged in user in the database then display contests available -->
