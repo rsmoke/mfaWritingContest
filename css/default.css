@@ -60,10 +60,7 @@ footer .mlogo {
 	height: 75px;
 }
 
-.btn-toolbar {
-	padding: 5px 0px;
 
-}
 .outputContainer {
 	padding: 5px 20px;
 	background-color: #efe;
@@ -75,11 +72,6 @@ footer .mlogo {
 
 select {
 	color:#000;
-}
-
-#cancel {
-	width: 50px;
-	margin-top: 5px;
 }
 
 .fileUpload-group {

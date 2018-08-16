@@ -189,19 +189,18 @@ switch ($classLevel) {
         </div>
       </div>
             <!-- //////////////////////////////// -->
-      <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="well well-sm">
-              <button type="submit" id="applyBasicInfo" class='btn btn-sm btn-success applyBtn center-block'>Submit</button><a id='cancel' class="btn btn-xs btn-warning center-block" href="index.php">Cancel</a>
+      <div class="row clearfix justify-content-center">
+        <div class="col-4 p-1 mb-2">
+            <div class="btn-group" role="group">
+              <button type="submit" id="applyBasicInfo" class='btn btn-success applyBtn'>Submit</button>
+              <a id="cancel" role="button" class="btn btn-warning" href="index.php">Cancel</a>
             </div>
         </div>
       </div>
             </form>
         <div class="row clearfix">
-          <div class="col-md-12">
-            <div class="well well-sm">
-              <small>  This data was last update on <?php echo $edited_on;?></small>
-            </div>
+          <div class="col p-1 mb-1 bg-info text-white">
+              This data was last update on <?php echo $edited_on;?>
           </div>
         </div>
   </div><!--Container of all things -->
