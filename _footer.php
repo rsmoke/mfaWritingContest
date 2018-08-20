@@ -1,21 +1,21 @@
 <footer class="footer container border border-dark">
 	<div class="row justify-content-around">
-		<div class="col-4">
+		<div class="col-6">
 			<address>
 					<span class="font-weight-bold">Department of <?php echo $deptLngName;?></span>
 					<br><?php echo $addressBldg;?>, <?php echo $address2;?>
 					<br><?php echo $addressStreet;?>
 					<br>Ann Arbor, MI <?php echo $addressZip;?>
-					<br>P: <?php echo $addressPhone;?> | F: <?php echo $addressFax;?>
+					<br><i class="fas fa-phone" ></i> <?php echo $addressPhone;?>
 			</address>
 	</div>
-	<div class="col-4">
+	<div class="col-6">
 		<a href="https://www.lsa.umich.edu"><img class="float-right" src="img/lsa.png" alt="LSA at the University of Michigan"></a>
 	</div>
 	<!-- <a href="http://www.umich.edu"><img class="mlogo rounded ml-auto d-block" src="img/michigan.png" alt="University of Michigan" /></a> -->
 </div>
 <div class="row justify-content-around">
-	<div class="col-4">
+	<div class="col-10 text-center">
 		<a href="http://www.regents.umich.edu">© <?php echo date('Y');?> Regents of the University of Michigan</a>
 	</div>
 </div>
