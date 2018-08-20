@@ -33,11 +33,9 @@ li {
 }
 
 footer {
-	/* font-family: Verdana, Arial, Helvetica, sans-serif; */
-	font-size: .8em;
+	font-size: .6em;
 	color: #5e8bac;
-	/* line-height:12px; */
-	background-color: #ddd;
+	background-color: #eee;
 	padding-top: 1em;
 }
 
@@ -87,8 +85,4 @@ select {
 	margin-left: 20px;
 	font-weight: bold;
 	font-size: 1.3em;
-}
-
-address {
-  font-size: .6rem;
 }
