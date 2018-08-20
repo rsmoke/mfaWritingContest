@@ -78,9 +78,14 @@ if ($hasApplicantDetails) {
     <div id="contestList">
         <div class="row clearfix">
             <div class="col">
-                <h4 class="text-left text-muted">These are the contests currently available to you:</h4>
-                <!--<a href="detailEdit.php" class="btn btn-info btn-xs" type="button">keep your profile up to date</a>-->
-                <div id="availableEntry"></div>
+              <div class="card text-white bg-success mb-3">
+                <h5 class="card-header">These are the contests currently available to you:</h5>
+                <div class="card-body bg-light text-dark">
+                  <div id="availableEntry"></div>
+                </div>
+              </div>
+                <!-- <h4 class="p-2 bg-success text-white">These are the contests currently available to you:</h4>
+                <div id="availableEntry"></div> -->
             </div>
         </div>
     </div>
@@ -89,7 +94,7 @@ if ($hasApplicantDetails) {
     <div id="appHistory">
         <div class="row clearfix">
             <div class="col">
-                <h4 class="text-left text-muted">These are the contests that you have entered:</h4>
+                <h4 class="text-left text-muted">Here are your current entries:</h4>
                 <div id="currentEntry"></div>
             </div>
         </div>
