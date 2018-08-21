@@ -17,12 +17,12 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
                     echo $row['manuscriptType'] . "</td><td>";
                     echo $row['title'] . "</td><td>";
                     echo date("F jS, Y  g:i A", (strtotime($row['datesubmitted']))) . "</td>";
-                    echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank'><span class='glyphicon glyphicon-book'></span></a></td>";
+                    echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank'><i class='fas fa-file text-primary'></i></a></td>";
                     echo "<td class='btnIcon'><button class='btn btn-danger btn-xs ";
 
                     echo date("Y-m-d H:i:s") > $row['date_closed']? ' disabled ' : '';
 
-                    echo " applicantdeletebtn' data-entryid='" . $row['EntryId'] . "'><span class='glyphicon glyphicon-remove-sign'></span></button></td></tr>";
+                    echo " applicantdeletebtn' data-entryid='" . $row['EntryId'] . "'><i class='fas fa-trash'></i></button></td></tr>";
                 }
                   echo "</tbody></table>";
             } else {

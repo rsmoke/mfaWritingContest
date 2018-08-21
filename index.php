@@ -65,9 +65,9 @@ if ($hasApplicantDetails) {
             <div class="col">
                 <h5 class='p-1 bg-dark text-white'>How to submit an entry:</h5>
                 <ol>
-                    <li>Click the ( <span class="text-success"><i class="fas fa-pencil-alt"></i></span> ) button adjacent to the name of the contest you’d like to enter.</li>
+                    <li>Click the ( <i class="fas fa-pencil-alt text-success"></i> ) button adjacent to the name of the contest you’d like to enter.</li>
                     <li>Complete the form and click the ( <span class="btn btn-success btn-sm disabled">Upload Application</span> ) button.</li>
-                    <li>Click the ( <span class="text-primary"><i class="fas fa-file"></i></span> ) button to review your submission.</li>
+                    <li>Click the ( <i class="fas fa-file text-primary"></i> ) button to review your submission.</li>
                 </ol>
                 <ul>
                     <li><em>NOTE: Be sure your profile is up to date before submitting your entry.</em> <a role="button" class="btn btn-outline-dark btn-sm" href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle fa-lg text-info"></i></a></li>
