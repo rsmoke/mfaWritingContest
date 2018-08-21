@@ -2,6 +2,7 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/configEnglishMFAContest.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
 
+$username = ldapgleaner($login_name);
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +15,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
 <?php include("_navbar.php");?>
 
     <div class="container"><!--Container of all things -->
-    <div class="row clearfix">
-        <div class="col-md-6 col-md-offset-3 jumbotron">
+    <div class="row justify-content-around">
+        <div class="col-8 jumbotron">
 
 <?php if(isset($_POST['submit'])){
     $to = "um_ricks+p8lizbzwi3rwjww5f8vh@boards.trello.com, hopwoodcontestnotify@umich.edu"; // this is your Email address
@@ -35,23 +36,22 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
     mail($from,$subject2,$message2, "From:english.department@umich.edu"); // sends a copy of the message to the sender
     echo "<h4>Mail Sent.</h4> <p>Thank you " . $first_name . " for getting in touch! We’ve sent you a copy of this message at the email address you provided.<br>
 Have a great day!</p>";
-    echo "<a class='btn btn-info' href='index.php'>Return to Hopwood Writing Contest</a>";
+    echo "<a class='btn btn-sm btn-info' href='index.php'>Return to Home</a>";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     unset($_POST['submit']);
     } else {
         ?>
-<h4 class='text-primary'>Please describe your comment or question in the message box below. Your
-input will help to make this a better resource!</h4>
-<small>If you would like us to contact you please specify that in your message.</small>
+<h4 class='text-primary'>Please describe your comment or question in the message box below. <small class="text-muted">Your
+input will help to make this a better resource!</small></h4>
 <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
 <div class="form-group">
-<label for="first_name">First Name:</label><input type="text" class="form-control" name="first_name">
+<label for="first_name">First Name:</label><input type="text" class="form-control" name="first_name" value="<?php echo $username[0]; ?>">
 </div>
 <div class="form-group">
-<label for="last_name">Last Name:</label><input type="text" class="form-control" name="last_name">
+<label for="last_name">Last Name:</label><input type="text" class="form-control" name="last_name" value="<?php echo $username[1]; ?>">
 </div>
 <div class="form-group">
-<label for="email">Email:</label><input type="email" class="form-control" name="email">
+<label for="email">Email:</label><input type="email" class="form-control" name="email" value="<?php echo $login_name . '@umich.edu'; ?>">
 </div>
 <div class="form-group">
 <label for="topic">This is about a:</label>
@@ -63,11 +63,15 @@ input will help to make this a better resource!</h4>
   <option value="Clarification">Clarification</option>
   <option value="Other">Other</option>
 </select>
-
-<div class="form-group">
-<label for="message">Message:</label><textarea rows="5" class="form-control" name="message" cols="30"></textarea>
 </div>
-<input type="submit" name="submit" value="Submit">
+<div class="form-group">
+<label for="message">Message:</label>
+<textarea rows="5" class="form-control" required name="message" cols="30"></textarea>
+<small><em>In your message, specify if you would like us to contact you.</em></small>
+</div>
+<div class="button-group">
+<button class="btn btn-outline-secondary btn-sm" type="submit" name="submit" value="Submit">Submit</button>
+</div>
 </form>
 
 <?php
