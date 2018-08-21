@@ -50,10 +50,13 @@ if ($hasApplicantDetails) {
     <div class="row clearfix">
         <div class="col">
           <?php if (!empty($info_header)) {
-                  $html = '<h2 class="text-center">' . $info_header . '</h2>';
-                  $html .= '<h4 class="text-left">' . $info_body . '</h4>';
+                  $html = '<h1 class="text-center">' . $info_header . '</h1>';
+                  $html .= '<p class="text-left">' . $info_body . '</p>';
                   echo $html;
                 } else { echo ''; }
+                if ($isAdmin){
+                  echo '<a role="button" class="btn btn-sm" href="header_edit.php" data-toggle="tooltip" data-placement="left" title="edit the contest page header"><i class="fas fa-edit fa-sm text-warning"></i></a>';
+                }
           ?>
         </div>
     </div>
@@ -84,8 +87,6 @@ if ($hasApplicantDetails) {
                   <div id="availableEntry"></div>
                 </div>
               </div>
-                <!-- <h4 class="p-2 bg-success text-white">These are the contests currently available to you:</h4>
-                <div id="availableEntry"></div> -->
             </div>
         </div>
     </div>
