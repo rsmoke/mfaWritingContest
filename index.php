@@ -51,7 +51,7 @@ if ($hasApplicantDetails) {
         <div class="col">
           <?php if (!empty($info_header)) {
                   $html = '<h1 class="text-center">' . $info_header . '</h1>';
-                  $html .= '<p class="text-left">' . $info_body . '</p>';
+                  $html .= $info_body;
                   echo $html;
                 } else { echo ''; }
                 if ($isAdmin){
