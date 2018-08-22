@@ -17,6 +17,13 @@ body {
 	font-style: italic;
 
 }
+#currentEntry {
+  font-size: .9rem;
+}
+
+#non_active_Entry {
+  font-size: .8rem;
+}
 
 .hopwood {
 	background: #E6E6DC;

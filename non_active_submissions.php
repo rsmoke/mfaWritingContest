@@ -10,8 +10,8 @@ if (!$result = $db->query($sql)) {
         exit(user_err_message);
     }
 if ($result->num_rows > 0 ){
-  echo "<table class='table table-responsive table-condensed table-hover'>";
-  echo "<thead><th>Contest</th><th>Entry Type</th><th>Title</th><th>Submitted</th><th class='btnIcon'>Manuscript<br><span style='font-size:.9rem;'>opens in a new browser tab</span></th><th>Entry Status</th></thead><tbody>";
+  echo "<table class='table table-responsive table-sm table-hover'>";
+  echo "<thead><th>Contest</th><th>Title</th><th>Submitted</th><th class='btnIcon'>Manuscript</th><th>Entry Status</th></thead><tbody>";
     while ($row = $result->fetch_assoc()) {
       switch($row['status']) {
         case 1:
@@ -28,10 +28,9 @@ if ($result->num_rows > 0 ){
       }
         echo "<tr><td>";
         echo $row['contestName'] . "</td><td>";
-        echo $row['manuscriptType'] . "</td><td>";
         echo $row['title'] . "</td><td>";
         echo date("F jS, Y  g:i A", (strtotime($row['datesubmitted']))) . "</td>";
-        echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank'><span class='glyphicon glyphicon-book'></span></a></td>";
+        echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank' data-toggle='tooltip' data-placement='left' title='opens in a new browser window'><i class='fas fa-file text-primary'></i></a></td>";
         echo "<td>" . $status_notice  . "</td></tr>";
     }
       echo "</tbody></table>";

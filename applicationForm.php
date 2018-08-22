@@ -37,7 +37,7 @@ if (isset($_POST['upload'])) {
             exit();
         }
         if ((!empty($_FILES["fileToUpload"])) && ($_FILES['fileToUpload']['error'] == 0) && (strlen(basename($_FILES["fileToUpload"]["name"])) < 250)) {
-            $target_dir = $_SERVER["DOCUMENT_ROOT"] . '/../contestfiles/';
+            $target_dir = $_SERVER["DOCUMENT_ROOT"] . '/../mfacontestfiles/';
             $filename = basename($_FILES["fileToUpload"]["name"]);
             $filename = preg_replace("/[^A-Za-z0-9\.]/", '', $filename);
             $target_file = getUTCTime() . "_" . $filename;
@@ -212,6 +212,68 @@ SQL;
                 echo '<input class="form-control" type="text" required name="recLetter2Name" placeholder="example: Alisse Portnoy" />';
               echo '</div>';
             break;
+        case 31:
+              $html = '<div id="MFATemplate">'; //THE FREDERICK BUSCH PRIZE IN CREATIVE WRITING
+              $html .= '<div class="card border-dark mb-3" style="max-width: 50rem;">';
+              $html .= '<div class="card-header bg-transparent border-dark">Established to commemorate the work and teaching of Frederick Busch, who passed away while serving
+                        as the Zell Distinguished Visiting Professor in 2006, this $2000 prize is intended to support the work of a
+                        promising fiction writer in the midst of graduate study in the Helen Zell Writers’ Program.
+                        </div>';
+              $html .= '<div class="card-body text-dark">';
+              $html .= '<h5 class="card-title">The application should include the following:</h5>';
+              $html .= '<ul>';
+              $html .= '<li>A title page with your name and contact information</li>';
+              $html .= '<li>A title page with only the title</li>';
+              $html .= '<li>A manuscript of up to 30 pages of original, unpublished work ( a single complete story, or chapter from a novel)</li>';
+              $html .= '<li>A 1-2 page proposal or outline for the novel or collection of stories from which the sample is taken.</li>';
+              $html .= '</ul>';
+              $html .= '</div>';
+              $html .= '<div class="card-footer bg-transparent border-dark">The entries will be judged by a local writer who does not teach in the MFA Program.</div>';
+              $html .= '</div>';
+              $html .= '</div>';
+              echo $html;
+            break;
+        case 32:
+              $html = '<div id="MFATemplate">'; //THE HENFIELD PRIZE IN FICTION
+              $html .= '<div class="card border-dark mb-3" style="max-width: 50rem;">';
+              $html .= '<div class="card-header bg-transparent border-dark">The $10,000 Henfield Prize in Fiction, supported by an endowment given by the Joseph F. McCrindle
+                        Foundation, is to be awarded to a continuing or graduating student in the Helen Zell Writers’ Program.
+                        </div>';
+              $html .= '<div class="card-body text-dark">';
+              $html .= '<h5 class="card-title">The application should include the following:</h5>';
+              $html .= '<ul>';
+              $html .= '<li>A title page with your name and contact information</li>';
+              $html .= '<li>A title page with only the title</li>';
+              $html .= '<li>A manuscript of up to 30 pages of original, unpublished work ( a single complete story, or chapter from a novel)</li>';
+              $html .= '</ul>';
+              $html .= '</div>';
+              $html .= '<div class="card-footer bg-transparent border-dark">The contest will be judged by a writer of national prominence who does not teach in the MFA Program.</div>';
+              $html .= '</div>';
+              $html .= '</div>';
+              echo $html;
+            break;
+            case 33:
+                  $html = '<div id="MFATemplate">'; //THE TYSON AWARD IN FICTION
+                  $html .= '<div class="card border-dark mb-3" style="max-width: 50rem;">';
+                  $html .= '<div class="card-header bg-transparent border-dark">The contest for the $2000 Tyson Award in Fiction is open to all continuing graduate students in the
+                            Department of English Language and Literature at the University of Michigan.
+                            </div>';
+                  $html .= '<div class="card-body text-dark">';
+                  $html .= '<h5 class="card-title">The application should include the following:</h5>';
+                  $html .= '<ul>';
+                  $html .= '<li>A title page with your name and contact information</li>';
+                  $html .= '<li>A title page with only the title</li>';
+                  $html .= '<li>A manuscript of up to 30 pages of original, unpublished work ( a single complete story, or chapter from a novel)</li>';
+                  $html .= '</ul>';
+                  $html .= '</div>';
+                  $html .= '<div class="card-footer bg-transparent border-dark">You cannot submit more than one story, even if the total number of pages stays within the limit of thirty.
+                            As required by the donors, the contest will be judged by a faculty member in the Department of English
+                            who does not teach in the Helen Zell Writers’ Program.
+                            </div>';
+                  $html .= '</div>';
+                  $html .= '</div>';
+                  echo $html;
+                break;
         // Do I need a default here?
     }
         ?>
@@ -238,9 +300,16 @@ SQL;
             //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="2" required disabled >Screenplay</label>';
             //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="7" required disabled >Shortfiction</label>';
             break;
-        case 18: // it would be categoryID 4
+        case 18: //falls through
+        case 31: //falls through
+        case 32: //falls through
+        case 33: // it would be categoryID 4
             //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="1" required disabled >Drama</label>';
-            echo '<label class="radio-inline"><input type="radio" name="categoryName" value="4" checked required >Fiction</label>';
+            // echo '<label class="radio-inline"><input type="radio" name="categoryName" value="4" checked required >Fiction</label>';
+            echo '<div class="form-check form-check-inline">';
+            echo '<input class="form-check-input" type="checkbox" name="categoryName" value="4" checked required >';
+            echo '<label class="form-check-label" for="inlineCheckbox1">Fiction</label>';
+            echo '</div>';
             //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="6" required disabled >Novel</label>';
             //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="3" required >Nonfiction</label>';
             //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="5" required >Poetry</label>';
@@ -336,7 +405,7 @@ SQL;
             <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format):</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
             <input type="file" name="fileToUpload" id="fileToUpload" required />
-            <span id="helpBlock2" class="help-block">Title (or first) page of pdf should be <strong><em>title of your manuscript, pen-name</em></strong> and <strong><em>contest and division entered (e.g., Summer Hopwood Poetry)</em></strong> only.</span>
+            <span  class="help-block p-1 mb-1 bg-warning text-dark">Title (or first) page of the pdf should be <strong><em>title of your manuscript</em></strong> and <strong><em>contest entered (e.g., THE TYSON AWARD IN FICTION)</em></strong> only.</span>
           </div>
           <div class='text-center'>
           <input class="btn btn-success" type="submit" name="upload" value="Upload Application">
