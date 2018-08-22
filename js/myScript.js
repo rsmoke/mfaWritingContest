@@ -2,7 +2,7 @@ $( document ).ready(function(){
 
   var host = window.location.hostname;
   if (host === "csgrsmoke.lsait.lsa.umich.edu"){
-    $('body').prepend("<div class='bg-danger text-center'>THIS IS A DEVELOPMENT ENVIRONMENT -- THIS IS A DEVELOPMENT ENVIRONMENT -- THIS IS A DEVELOPMENT ENVIRONMENT -- THIS IS A DEVELOPMENT ENVIRONMENT </div>");
+    $('body').prepend("<div class='bg-danger text-white text-center'>THIS IS A DEVELOPMENT ENVIRONMENT -- THIS IS A DEVELOPMENT ENVIRONMENT -- THIS IS A DEVELOPMENT ENVIRONMENT -- THIS IS A DEVELOPMENT ENVIRONMENT </div>");
   }
 
   $('[data-info-toggle="tooltip"]').tooltip({
@@ -52,7 +52,6 @@ $( document ).ready(function(){
 	});
 
 	$('#availableEntry').on('click', '.applyBtn', function ( event ){
-		//var useAppTemplate = $(this).data('app-template'); // application template to use
 		var useAppTemplate = 'applicationForm';
 		var useContest = $(this).data('contest-num');
 		window.location = useAppTemplate + '.php?id=' + useContest;
