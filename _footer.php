@@ -9,7 +9,7 @@
 					<br><i class="fas fa-phone" ></i> <?php echo $addressPhone;?>
 			</address>
 	</div>
-	<div class="col-6">
+	<div class="col-4">
 		<a href="https://www.lsa.umich.edu"><img class="float-right" src="img/lsa.png" alt="LSA at the University of Michigan"></a>
 	</div>
 	<!-- <a href="http://www.umich.edu"><img class="mlogo rounded ml-auto d-block" src="img/michigan.png" alt="University of Michigan" /></a> -->

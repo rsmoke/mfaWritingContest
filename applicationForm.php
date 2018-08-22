@@ -405,7 +405,8 @@ SQL;
             <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format):</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
             <input type="file" name="fileToUpload" id="fileToUpload" required />
-            <span  class="help-block p-1 mb-1 bg-warning text-dark">Title (or first) page of the pdf should be <strong><em>title of your manuscript</em></strong> and <strong><em>contest entered (e.g., THE TYSON AWARD IN FICTION)</em></strong> only.</span>
+            <br />
+            <span  class="help-block p-1 mb-1 bg-warning text-dark">Title (or first) page of the pdf should be <strong><em>title of your manuscript</em></strong> and <strong><em>name of contest entered</em></strong> only.</span>
           </div>
           <div class='text-center'>
           <input class="btn btn-success" type="submit" name="upload" value="Upload Application">

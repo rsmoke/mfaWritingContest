@@ -25,19 +25,10 @@ body {
   font-size: .8rem;
 }
 
-.hopwood {
-	background: #E6E6DC;
-	padding: 5px;
-}
-
-.notHopwood {
-	background: #FFFFF0;
-}
-
-li {
+/* li {
 	margin-top: 5px;
 
-}
+} */
 
 footer {
 	font-size: .6em;
@@ -65,19 +56,13 @@ footer .mlogo {
 	height: 75px;
 }
 
-
-.outputContainer {
-	padding: 5px 20px;
-	background-color: #efe;
-}
-
 .ui-datepicker-calendar {
     display: none;
 }
 
-select {
+/* select {
 	color:#000;
-}
+} */
 
 .fileUpload-group {
 	margin-top: 5px;
