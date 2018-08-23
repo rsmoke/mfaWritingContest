@@ -1,0 +1,441 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"assert",
+				"assert_select"
+			],
+			[
+				"v",
+				"visible"
+			],
+			[
+				"create",
+				"create_user"
+			],
+			[
+				"current",
+				"current_ordered_by"
+			],
+			[
+				"uniq",
+				"uniqueNames"
+			],
+			[
+				"result",
+				"result_output"
+			],
+			[
+				"judge",
+				"judgerating"
+			],
+			[
+				"Nat_judge",
+				"Nat_judge1"
+			],
+			[
+				"P",
+				"Preview"
+			],
+			[
+				"succ",
+				"successful_submit_confirmation"
+			],
+			[
+				"redirect",
+				"redirect_to"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: link",
+				"Snippet: link_to (path)"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ra",
+				"Raw Line Edit: Toggle"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"resource",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 475.0
+	},
+	"console":
+	{
+		"height": 195.0,
+		"history":
+		[
+			"PackageResourceViewer: Open Resource",
+			"`PackageResourceViewer: Open Resource`:"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rsmoke/inc/mmss_dev/config.inc.php",
+		"/Users/rsmoke/Google Drive/ CollegeConnections-New Data Base Project/Data-Merge related files/CC Database/051817_CollConnFinal.sql",
+		"/Users/rsmoke/procurement_bits/mysql_insert_generator",
+		"/Volumes/Inetpub-Production/wwwroot/english/undergraduate/courses/conReqs.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/undergraduate/courses/hlCourses.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/undergraduate/courses/conReqsDetail.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/undergraduate/courses/conReqsDetailNEW.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/Connections/generalCONN.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/includes/common.asp",
+		"/Users/rsmoke/Downloads/google_downloads/export (16).xls",
+		"/Users/rsmoke/Downloads/google_downloads/export (17).xls",
+		"/Users/rsmoke/Documents/061218_LimeSurvey_TrblShoot_SQL_Fail",
+		"/Users/rsmoke/Documents/061218_LimeSurvey_TrblShoot_QID_Ans",
+		"/Users/rsmoke/Documents/061218_LimeSurvey_TrblShoot_Text_Ans",
+		"/Users/rsmoke/Documents/math___6-6-18_8-04 AM_BUP060618_MMSS_data__webapps-db.web.itd.umich.edu",
+		"/Users/rsmoke/Downloads/google_downloads/layoutit/src/css/style.css",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/facultyApp/facBus/mentoring/default.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/userservices/webactions.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/caUploadApp/Database_Open.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/caUploadApp/Database_Download.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/sectionDetail.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/default.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/jobseeker/dates.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/resourcesDetail.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/jobseeker/default.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/resources.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/sections.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/gradMentoring/jobseeker/postdocs.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/contact.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/default.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/people/profile.asp",
+		"/Users/rsmoke/Documents/127.0.0.1_hestia_StudentVisit___2-7-18_1623",
+		"/Volumes/Inetpub-Production/wwwroot/english/ulV12n/Department Meeting Minutes/default.asp",
+		"/Users/rsmoke/Downloads/math_20180128.sql",
+		"/Users/rsmoke/Sites/BearRiver_Complete_aka_fin/bearriver/registrationForm.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/fin/success.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/fin/bearriver/registrationForm.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/fin/bearriver/br-dep-processor.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/fin/bearriver/paymentForm.asp",
+		"/Users/rsmoke/Downloads/fileholder(2).php",
+		"/Users/rsmoke/Downloads/fileholder(1).php",
+		"/Users/rsmoke/Downloads/fileholder.php",
+		"/Volumes/Inetpub-Production/wwwroot/english/fin/bearriver/registrationFull.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/fin/index.html",
+		"/Volumes/Inetpub-Production/wwwroot/english/grad/default.asp",
+		"/Volumes/Inetpub-Production/wwwroot/english/hopwood/default.asp",
+		"/Users/rsmoke/EmberTrain/bumbox1/node_modules/ember-cli/node_modules/inquirer/node_modules/cli-color/lib/xterm-match.js",
+		"/Users/rsmoke/Desktop/tester.sql",
+		"/Users/rsmoke/RailsProjects/sample_app/app/helpers/application_helper.rb",
+		"/Users/rsmoke/RailsProjects/sample_app/app/views/layouts/application.html.erb",
+		"/Users/rsmoke/RailsProjects/sample_app/app/views/static_pages/about.html.erb",
+		"/Users/rsmoke/RailsProjects/sample_app/app/views/static_pages/contact.html.erb",
+		"/Users/rsmoke/RailsProjects/sample_app/app/controllers/static_pages_controller.rb",
+		"/Users/rsmoke/RailsProjects/sample_app/config/routes.rb",
+		"/Users/rsmoke/RailsProjects/sample_app/app/views/static_pages/help.html.erb",
+		"/Users/rsmoke/RailsProjects/sample_app/app/views/static_pages/home.html.erb",
+		"/Users/rsmoke/RailsProjects/sample_app/test/test_helper.rb",
+		"/Users/rsmoke/RailsProjects/sample_app/Guardfile",
+		"/Users/rsmoke/RailsProjects/sample_app/.gitignore",
+		"/Users/rsmoke/RailsProjects/sample_app/app/controllers/application_controller.rb",
+		"/Users/rsmoke/RailsProjects/sample_app/README.md",
+		"/Users/rsmoke/RailsProjects/sample_app/Gemfile",
+		"/Users/rsmoke/RailsSites/rails5template/rails5.rb",
+		"/Volumes/Inetpub-Production/wwwroot/english/secure/userservices/resources.asp",
+		"/Users/rsmoke/Downloads/fileholder(10).php",
+		"/Users/rsmoke/RailsTests/user-model/app/views/layouts/application.html.erb",
+		"/Users/rsmoke/Sites/hopwoodjudging/htaccess",
+		"/Users/rsmoke/Sites/hopwoodjudging/closed-index.php",
+		"/Users/rsmoke/Sites/hopwoodadmin/closed-index.php",
+		"/Users/rsmoke/Sites/hopwoodadmin/css/default.css",
+		"/Users/rsmoke/Downloads/google_downloads/math.grad_student_list_11-22-2017.sql",
+		"/Users/rsmoke/Downloads/google_downloads/grad_student_list.sql",
+		"/Users/rsmoke/Box Sync/mi_locations/CentralCampus_map.svg",
+		"/Users/rsmoke/Downloads/google_downloads/central_campus.svg",
+		"/Users/rsmoke/Downloads/google_downloads/map (1).svg",
+		"/Users/rsmoke/Downloads/google_downloads/map.svg",
+		"/Users/rsmoke/Sites/hopwoodadmin/evaluations.php",
+		"/Users/rsmoke/Desktop/env_var.md",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/rooms/index.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/rooms/_classroom_search.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/assets/javascripts/rooms.js",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/rooms/_classroom_search_filters_dropdown_two.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/rooms/_classroom_search_filters_dropdown_one.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/rooms/_classroom_index_card_baseball.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/.gitignore",
+		"/Users/rsmoke/Sites/mmss/forms/mmss_frm_questions.php",
+		"/Users/rsmoke/Sites/EnglishKudos/index.php",
+		"/Library/WebServer/Support/configEnglishKudos.php",
+		"/Users/rsmoke/Downloads/all_databases_dump.sql",
+		"/usr/local/miserver/website/web/lib/orderdb/OrderDb.php",
+		"/usr/local/miserver/website/web/docs/order/app/utility/Reporter.php",
+		"/usr/local/miserver/website/web/docs/order/app/views/reports/createorder_report.phtml",
+		"/usr/local/miserver/website/web/docs/order/app/views/reports/index.phtml",
+		"/usr/local/miserver/website/web/docs/order/app/controllers/ReportsController.php",
+		"/usr/local/miserver/website/web/docs/order/app/views/reports/commentsreport.phtml",
+		"/usr/local/miserver/website/web/docs/order/app/views/reports/alldeptreports.phtml",
+		"/usr/local/miserver/website/web/lib/QuickMenu.php",
+		"/usr/local/miserver/website/web/lib/DeptMenu.php",
+		"/usr/local/miserver/website/web/lib/authorization/AuthDb.php",
+		"/usr/local/miserver/website/web/docs/order/app/views/reports/all_orders_download.phtml",
+		"/Users/rsmoke/RailsSites/mi_locations/,",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/buildings/index.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/spec/mailers/feedback_spec.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/spec/factories/alerts.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/app/controllers/alerts_controller.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/spec/factories/buildings.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/spec/models/alert_spec.rb",
+		"/Users/rsmoke/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/rsmoke/Library/Application Support/Sublime Text 3/Packages/DashDoc/Default (OSX).sublime-keymap",
+		"/Users/rsmoke/Library/Application Support/Sublime Text 3/Packages/DashDoc/DashDoc.sublime-settings",
+		"/Users/rsmoke/RailsSites/mi_locations/app/controllers/application_controller.rb",
+		"/Users/rsmoke/Library/Application Support/Sublime Text 3/Packages/User/DashDoc.sublime-settings",
+		"/Users/rsmoke/RailsSites/mi_locations/app/controllers/pages_controller.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/app/mailers/feedback_mailer.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/spec/mailers/message_spec.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/Gemfile",
+		"/Users/rsmoke/RailsSites/mi_locations/app/controllers/buildings_controller.rb",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/buildings/_map_buildings.js.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/assets/stylesheets/buildings.css.sass",
+		"/Users/rsmoke/RailsSites/mi_locations/app/assets/stylesheets/rooms.sass",
+		"/Library/WebServer/Support/REMOTE_USER.php",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/buildings/show.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/rooms/show.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/assets/stylesheets/application.sass",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/layouts/_header.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/feedback/_feedback.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/layouts/_footer.html.haml",
+		"/Users/rsmoke/RailsSites/mi_locations/app/views/layouts/application.html.haml"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": false
+	},
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.7,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 381.0
+	},
+	"output.find_results":
+	{
+		"height": 628.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"16":
+				{
+					"group": 0,
+					"index": 0
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 427.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
