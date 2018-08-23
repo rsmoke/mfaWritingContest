@@ -71,6 +71,7 @@ if ($hasApplicantDetails) {
                 </ol>
                 <ul>
                     <li><em>NOTE: Be sure your profile is up to date before submitting your entry.</em> <a role="button" class="btn btn-outline-dark btn-sm" href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle fa-lg text-info"></i></a></li>
+                    <li><em>NOTE: The single file you upload needs to be in <strong>PDF format</strong> and it will include all the items required for the contest (e.g., Title page, manuscript, other documents)</em></li>
                     <li><em>NOTE: The pen name in your profile must match the one on your pdf; your real name may <u>not</u> be used.</em></li>
                     <li><em>NOTE: You will need to upload a separate application for each entry.</em></li>
                 </ul>
