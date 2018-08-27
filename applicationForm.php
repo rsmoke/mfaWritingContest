@@ -197,8 +197,7 @@ SQL;
               $html .= '<div class="card-body text-dark">';
               $html .= '<h5 class="card-title">The application should include the following:</h5>';
               $html .= '<ul>';
-              $html .= '<li>A title page with your name and contact information</li>';
-              $html .= '<li>A title page with only the title</li>';
+              $html .= '<li>A title page with only the title and name of contest entered</li>';
               $html .= '<li>A manuscript of up to 30 pages of original, unpublished work ( a single complete story, or chapter from a novel)</li>';
               $html .= '<li>A 1-2 page proposal or outline for the novel or collection of stories from which the sample is taken.</li>';
               $html .= '</ul>';
@@ -217,8 +216,7 @@ SQL;
               $html .= '<div class="card-body text-dark">';
               $html .= '<h5 class="card-title">The application should include the following:</h5>';
               $html .= '<ul>';
-              $html .= '<li>A title page with your name and contact information</li>';
-              $html .= '<li>A title page with only the title</li>';
+              $html .= '<li>A title page with only the title and name of contest entered</li>';
               $html .= '<li>A manuscript of up to 30 pages of original, unpublished work ( a single complete story, or chapter from a novel)</li>';
               $html .= '</ul>';
               $html .= '</div>';
@@ -236,8 +234,7 @@ SQL;
                   $html .= '<div class="card-body text-dark">';
                   $html .= '<h5 class="card-title">The application should include the following:</h5>';
                   $html .= '<ul>';
-                  $html .= '<li>A title page with your name and contact information</li>';
-                  $html .= '<li>A title page with only the title</li>';
+                  $html .= '<li>A title page with only the title and name of contest entered</li>';
                   $html .= '<li>A manuscript of up to 30 pages of original, unpublished work ( a single complete story, or chapter from a novel)</li>';
                   $html .= '</ul>';
                   $html .= '</div>';
@@ -284,14 +281,14 @@ SQL;
             ?>
           </div>
           <div class="form-group fileUpload-group">
-            <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format):</label>
+            <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format and under 20Mbytes in size):</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
             <input type="file" name="fileToUpload" id="fileToUpload" required />
             <br />
             <span  class="help-block p-1 mb-1 bg-warning text-dark">Title (or first) page of the pdf should be <strong><em>title of your manuscript</em></strong> and <strong><em>name of contest entered</em></strong> only.</span>
           </div>
           <div class='text-center'>
-          <input class="btn btn-success" type="submit" name="upload" value="Upload Application">
+          <input class="btn btn-success p-1 mb-1" type="submit" name="upload" value="Upload Application">
           </div>
          </form>
     </article>
