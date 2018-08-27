@@ -12,3 +12,4 @@ rsync_excludes
 pinfo.php
 fileUpload.sublime-workspace
 output
+.idea/
