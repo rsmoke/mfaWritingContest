@@ -36,21 +36,6 @@ $( document ).ready(function(){
 		window.location = 'coversheet.php?sbmid=' + entryid;
 	});
 
-	$("#sameAddress").click( function(e){
-		e.preventDefault();
-		var streetL = $( "input[name ='streetL']" ).val();
-		var cityL = $( "input[name ='cityL']" ).val();
-		var stateL = $( "select[name ='stateL']" ).val();
-		var zipL = $( "input[name ='zipL']" ).val();
-		var usrtelL =  $( "input[name ='usrtelL']" ).val();
-
-		$( "input[name ='streetH']" ).val( streetL );
-		$( "input[name ='cityH']" ).val( cityL );
-		$( "select[name ='stateH']" ).val( stateL );
-		$( "input[name ='zipH']" ).val( zipL );
-		$( "input[name ='usrtelH']" ).val( usrtelL );
-	});
-
 	$('#availableEntry').on('click', '.applyBtn', function ( event ){
 		var useAppTemplate = 'applicationForm';
 		var useContest = $(this).data('contest-num');
@@ -68,14 +53,4 @@ $( document ).ready(function(){
             $(this).datepicker('setDate', new Date(year, month, 1));
         }
     });
-
-  $('#applicantPenName').blur(function() {
-    if ($('#applicantPenName').val() == $('#applicantFname').val() + ' ' + $('#applicantLname').val()){
-      alert( "NOTE: Do not use your real name as a pen-name!" );
-      $('#applyBasicInfo').prop('disabled', true);
-    } else {
-      $('#applyBasicInfo').prop('disabled', false);
-    };
-  });
-
 });

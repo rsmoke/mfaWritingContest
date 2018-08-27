@@ -3,11 +3,11 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/configEnglishMFAContest.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
 
-$sql = "SELECT contestName, manuscriptType, document, title, datesubmitted, EntryId, status FROM vw_entrydetail WHERE uniqname = '$login_name' AND status NOT IN (0,1)";
+$sql = "SELECT contestName, document, title, datesubmitted, EntryId, status FROM vw_entrydetail WHERE uniqname = '$login_name' AND status NOT IN (0,1)";
 
 if (!$result = $db->query($sql)) {
         db_fatal_error("data select issue", $db->error, $sql, $login_name);
-        exit(user_err_message);
+        exit($user_err_message);
     }
 if ($result->num_rows > 0 ){
   echo "<table class='table table-responsive table-sm table-hover'>";

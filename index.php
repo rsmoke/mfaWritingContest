@@ -134,35 +134,6 @@ if ($hasApplicantDetails) {
                         <?php echo $login_name . "@umich.edu";?></label>
                         <input class="form-control" type="hidden" required name="uniqname" value="<?php echo $login_name;?>" />
 
-                        <h5>ADDRESS:</h5>
-                        <h6>Local(campus)</h6>
-                        <label for="streetL">Street</label>
-                        <input class="form-control" type="text" tabindex="130" required name="streetL" />
-                        <label for="cityL">City</label>
-                        <input class="form-control" type="text" tabindex="140" required name="cityL" />
-                        <label for="stateL">State</label>
-                          <select class="form-control bfh-states" tabindex="150" name="stateL" data-country="US" data-state="MI"></select>
-                        <label for="zipL">Zip</label>
-                        <input class="form-control" type="text" tabindex="160" required name="zipL" pattern="(^[0-9]{5}$)" title="enter a 5 digit zipcode" />
-                        <label for="usrtelL">Phone</label>
-                        <input class="form-control" type="text" tabindex="170" name="usrtelL" data-format="ddd-ddd-dddd"/>
-                    <br />
-                        <h6>Hometown: <button id="sameAddress" class="btn btn-xs">or use campus address</button></h6>
-                        <label for="streetH">Street</label>
-                        <input class="form-control" type="text" tabindex="180" required name="streetH" />
-                        <label for="cityH">City</label>
-                        <input class="form-control" type="text" tabindex="190" required name="cityH" />
-                        <label for="stateH">State</label>
-                          <select class="form-control bfh-states" tabindex="200" required name="stateH" data-country="countries" data-state="MI"></select>
-                          <span id="helpBlock" class="help-block">If your hometown is not in the US, please select the country below first</span>
-                        <label for="zipH">Zip</label>
-                        <input class="form-control" type="text" tabindex="210" required name="zipH" pattern="(^[0-9]{5}$)" title="enter a 5 digit zipcode"/>
-                        <label for="countryH">Country</label>
-                          <select id="countries" class="form-control bfh-countries" tabindex="200" required name="countryH" data-country="US" data-flags="true"></select>
-                        <label for="usrtelH">Phone</label>
-                        <input class="form-control" type="text" tabindex="220" name="usrtelH" data-format="ddd-ddd-dddd" />
-
-                        <!-- //////////////////////////////// -->
                     <hr>
                         <h5>ACADEMICS:</h5>
                         I am a:
@@ -183,37 +154,10 @@ if ($hasApplicantDetails) {
                             <input type="radio" id="inlineRadio2" name="classLevel" required value="20"> Graduate
                           </label>
                         </div>
-                        <label for="school">SCHOOL OR COLLEGE</label>
-                        <input class="form-control" type="text" tabindex="230" required name="school" placeholder="example: LSA" />
-                        <label for="major">Major (if undergraduate)</label>
-                        <input class="form-control" type="text" tabindex="240" name="major" placeholder="example: English" />
-                        <label for="dept">Department (if graduate)</label>
-                        <input class="form-control" type="text" tabindex="250" name ="dept" placeholder="example: Dept. of English Language and Literature" />
                         <label for="gradYear">Expected graduation date</label>
                         <input class="date-picker form-control" id="gradYearMonth" tabindex="260" required name="gradYearMonth" />
                         <label for="degree">Degree</label>
                         <input class="form-control" type="text" tabindex="270" required name="degree" placeholder="example: Bachelors" />
-                        <label for="finAid">Do you receive NEED-BASED financial aid?&nbsp;&nbsp;</label>
-                        <label class="radio-inline">
-                          <input type="radio" id="inlineRadio1" name="finAid" required value="1"> YES
-                        </label>
-                        <label class="radio-inline">
-                          <input type="radio" id="inlineRadio2" name="finAid" required value="0"> NO
-                        </label><br />
-                        <label for="finAidDesc">Details:</label>
-                        <input class="form-control" type="textarea" name="finAidDesc" placeholder="In what years and terms did you recieve aid"/>
-
-                        <!-- //////////////////////////////// -->
-
-                        <hr>
-                        <h5>PUBLICITY:</h5>
-                        <p>If your manuscript earns a Hopwood or other award, the Hopwood committee will forward a press release to your local newspaper or media outlet.</p>
-                        <label for="namePub">Entrant's name as it should appear in publicity</label>
-                        <input class="form-control" type="text" tabindex="280" name="namePub" value="<?php echo $userName[0] . " " . $userName[1];?>"/>
-                        <label for="homeNewspaper">Name of your hometown newspaper or preferred media outlet</label>
-                        <input class="form-control" type="text" tabindex="290" name="homeNewspaper"  placeholder="example: The Times-Argus" />
-                        <label for="penName">Enter a Pen name? (Do not use your real name and this pen name must match the one on your pdf entry(s))</label>
-                        <input id="applicantPenName" class="form-control" type="text" tabindex="300" name="penName" required pattern="^\S[a-zA-Z \/,.'-íéö]+$" placeholder="example: Sarah Bellum" />
                     </div>
                 </div>
             </div>

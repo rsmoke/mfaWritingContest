@@ -9,9 +9,8 @@ if (isset($_POST['upload'])) {
         $contestID = htmlspecialchars($_POST['contestID']); //Get id passed, this is the contests id
 
         // this comes from the radio buttons on submission for selecting category name ie. fiction, poetry, screenplay etc
-        $categoryID = htmlspecialchars($_POST['categoryName']);
+        // $categoryID = htmlspecialchars($_POST['categoryName']);
         $title = $db->real_escape_string(htmlspecialchars($_POST["title"]));
-        $courseNameNum = $instrName = $termYear = $recLetter1Name = $recLetter2Name = "NoValue";
 
         $sqlApplicant = "SELECT id, classLevel FROM tbl_applicant WHERE uniqname = '$login_name' ";
         if(!$resApplicant = $db->query($sqlApplicant)){
@@ -86,28 +85,16 @@ if (isset($_POST['upload'])) {
                       INSERT INTO `tbl_entry`
                           (`contestID`,
                           `applicantID`,
-                          `categoryID`,
                           `classLevelID`,
                           `title`,
                           `documentName`,
-                          `courseNameNum`,
-                          `instrName`,
-                          `termYear`,
-                          `recLetter1Name`,
-                          `recLetter2Name`,
                           `created_by`)
                           VALUES
                           ($contestID,
                           $applicantID,
-                          $categoryID,
                           $classLevelID,
                           '$title',
                           '$target_file',
-                          '$courseNameNum',
-                          '$instrName',
-                          '$termYear',
-                          '$recLetter1Name',
-                          '$recLetter2Name',
                           '$login_name')
 SQL;
                     if (!$result = $db->query($sqlInsert)) {
@@ -253,43 +240,16 @@ SQL;
         <label for="title">Title of submission</label>
         <input class="form-control" type="text" required name="title" />
 
-
-        <label for="categoryName">Please select a manuscript type:</label>
-
-          <div id="radioSelectFor<?php echo $contestName; ?>">
-    <?php //select what the application category(novel, poetry, fiction etc) is for the submission by
-            //taking the contests id and doing a lookup on link_contestsTocategory
-    switch ($contestsID) { //What contests id is being submitted to
-
-        case 31: //falls through
-        case 32: //falls through
-        case 33: // it would be categoryID 4
-            echo '<div class="form-check form-check-inline">';
-            echo '<input class="form-check-input" type="checkbox" name="categoryName" value="4" checked required >';
-            echo '<label class="form-check-label" for="inlineCheckbox1">Fiction</label>';
-            echo '</div>';
-            break;
-        default:
-            //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="1" required disabled >Drama</label>';
-            echo '<label class="radio-inline"><input type="radio" name="categoryName" value="4" checked required >Fiction</label>';
-            //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="6" required disabled >Novel</label>';
-            //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="3" required disabled >Nonfiction</label>';
-            //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="5" checked required >Poetry</label>';
-            //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="2" required disabled >Screenplay</label>';
-            //echo '<label class="radio-inline"><input type="radio" name="categoryName" value="7" required disabled >Shortfiction</label>';
-    };
-            ?>
-          </div>
-          <div class="form-group fileUpload-group">
-            <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format and under 20Mbytes in size):</label>
-            <input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
-            <input type="file" name="fileToUpload" id="fileToUpload" required />
-            <br />
-            <span  class="help-block p-1 mb-1 bg-warning text-dark">Title (or first) page of the pdf should be <strong><em>title of your manuscript</em></strong> and <strong><em>name of contest entered</em></strong> only.</span>
-          </div>
-          <div class='text-center'>
+        <div class="form-group fileUpload-group">
+          <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format and under 20Mbytes in size):</label>
+          <input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
+          <input type="file" name="fileToUpload" id="fileToUpload" required />
+          <br />
+          <span  class="help-block p-1 mb-1 bg-warning text-dark">Title (or first) page of the pdf should be <strong><em>title of your manuscript</em></strong> and <strong><em>name of contest entered</em></strong> only.</span>
+        </div>
+        <div class='text-center'>
           <input class="btn btn-success p-1 mb-1" type="submit" name="upload" value="Upload Application">
-          </div>
+        </div>
          </form>
     </article>
     </section>

@@ -15,20 +15,14 @@ if ($result->num_rows > 0) {
           $classLevel = $row["classLevel"];
       //set database field name associated to applicant's classlevel variable
       switch ($classLevel){
-          case '9':
-              $eligibility = "freshmanEligible";
+          case '21':
+              $eligibility = "firstyearEligible";
               break;
-          case '10':
-              $eligibility = "sophmoreEligible";
+          case '22':
+              $eligibility = "secondyearEligible";
               break;
-          case '11':
-              $eligibility = "juniorEligible";
-              break;
-          case '12':
-              $eligibility = "seniorEligible";
-              break;
-          case '20':
-              $eligibility = "graduateEligible";
+          case '23':
+              $eligibility = "zellfellowEligible";
               break;
       }
   }
