@@ -77,13 +77,13 @@ switch ($classLevel) {
               I am a:
               <div id="classLevelSelect">
                 <label class="radio-inline">
-                  <input type="radio" id="firstyearRad" name="classLevel" required value="9" <?php echo $firstyearRadState  ?> > First-Year
+                  <input type="radio" id="firstyearRad" name="classLevel" required value="21" <?php echo $firstyearRadState  ?> > First-Year
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" id="secondyearRad" name="classLevel" required value="10" <?php echo $secondyearRadState  ?> > Second-Year
+                  <input type="radio" id="secondyearRad" name="classLevel" required value="22" <?php echo $secondyearRadState  ?> > Second-Year
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" id="zellfellowRad" name="classLevel" required value="11" <?php echo $zellfellowRadState  ?> > Zell-Fellow
+                  <input type="radio" id="zellfellowRad" name="classLevel" required value="23" <?php echo $zellfellowRadState  ?> > Zell-Fellow
                 </label>
                </div>
 

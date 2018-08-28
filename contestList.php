@@ -24,6 +24,8 @@ if ($result->num_rows > 0) {
           case '23':
               $eligibility = "zellfellowEligible";
               break;
+          default:
+            $eligibility = "firstyearEligible";
       }
   }
 }
@@ -37,7 +39,7 @@ if (!$result = $db->query($sqlCurrentContest)) {
     exit($user_err_message);
 }
 
-if ($result->num_rows > 0) {
+if (($result->num_rows > 0) && ($classLevel < 23)) {
         echo "<table class='table table-responsive table-sm table-striped'>";
         echo "<thead class='thead-dark'><th>Contest</th><th>Apply</th></thead><tbody>";
     while ($row = $result->fetch_assoc()) {
@@ -54,5 +56,5 @@ if ($result->num_rows > 0) {
     }
         echo "</tbody></table>";
 } else {
-        echo "No contests are currently open";
+        echo "There are currently no available contest";
 }

@@ -139,19 +139,13 @@ if ($hasApplicantDetails) {
                         I am a:
                         <div id="classLevelSelect">
                           <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="9"> Freshman
+                            <input type="radio" id="inlineRadio1" name="classLevel" required value="21"> First-Year
                           </label>
                           <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="10"> Sophmore
+                            <input type="radio" id="inlineRadio1" name="classLevel" required value="22"> Second-Year
                           </label>
                           <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="11"> Junior
-                          </label>
-                          <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="12"> Senior
-                          </label>
-                          <label class="radio-inline">
-                            <input type="radio" id="inlineRadio2" name="classLevel" required value="20"> Graduate
+                            <input type="radio" id="inlineRadio1" name="classLevel" required value="23"> Zell-Fellow
                           </label>
                         </div>
                         <label for="gradYear">Expected graduation date</label>
