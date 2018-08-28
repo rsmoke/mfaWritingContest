@@ -12,7 +12,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
                 echo "<table class='table table-responsive table-sm'>";
                 echo "<thead><th>Contest</th><th>Title</th><th>Submitted</th><th class='btnIcon'>Manuscript</th><th class='btnIcon'>Remove</th></thead><tbody>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr><td>";
+                    echo "<tr><td class='text-muted small'>";
                     echo $row['contestName'] . "</td><td>";
                     echo $row['title'] . "</td><td>";
                     echo date("F jS, Y  g:i A", (strtotime($row['datesubmitted']))) . "</td>";
