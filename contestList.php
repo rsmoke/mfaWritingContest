@@ -15,21 +15,17 @@ if ($result->num_rows > 0) {
           $classLevel = $row["classLevel"];
       //set database field name associated to applicant's classlevel variable
       switch ($classLevel){
-          case '9':
-              $eligibility = "freshmanEligible";
+          case '21':
+              $eligibility = "firstyearEligible";
               break;
-          case '10':
-              $eligibility = "sophmoreEligible";
+          case '22':
+              $eligibility = "secondyearEligible";
               break;
-          case '11':
-              $eligibility = "juniorEligible";
+          case '23':
+              $eligibility = "zellfellowEligible";
               break;
-          case '12':
-              $eligibility = "seniorEligible";
-              break;
-          case '20':
-              $eligibility = "graduateEligible";
-              break;
+          default:
+            $eligibility = "firstyearEligible";
       }
   }
 }
@@ -43,7 +39,7 @@ if (!$result = $db->query($sqlCurrentContest)) {
     exit($user_err_message);
 }
 
-if ($result->num_rows > 0) {
+if (($result->num_rows > 0) && ($classLevel < 23)) {
         echo "<table class='table table-responsive table-sm table-striped'>";
         echo "<thead class='thead-dark'><th>Contest</th><th>Apply</th></thead><tbody>";
     while ($row = $result->fetch_assoc()) {
@@ -60,5 +56,5 @@ if ($result->num_rows > 0) {
     }
         echo "</tbody></table>";
 } else {
-        echo "No contests are currently open";
+        echo "There are currently no available contest";
 }
