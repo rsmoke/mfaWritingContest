@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-@-moz-document url-prefix() {
-  fieldset { display: table-cell; }
-}
-
 body {
 	padding-top: 70px;
 }
@@ -60,9 +56,9 @@ footer .mlogo {
     display: none;
 }
 
-/* select {
-	color:#000;
-} */
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    color: transparent;
+}
 
 .fileUpload-group {
 	margin-top: 5px;

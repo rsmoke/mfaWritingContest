@@ -2,7 +2,7 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/configEnglishMFAContest.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <?php include("_head.php"); ?>
 
 <body>

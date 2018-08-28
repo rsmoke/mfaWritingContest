@@ -14,11 +14,11 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
   $sqlInsert = <<<SQL
   INSERT INTO `tbl_applicant` (`userFname`, `userLname`, `umid`, `uniqname`
     ,`classLevel`, `gradYearMonth`, `degree`, `created_by`, `created_on`)
-  VALUES ('$userFname', '$userLname', '$umid', '$uniqname',
+  VALUES ('$userFname', '$userLname', '$umid', '$uniqname'
     , '$classLevel', '$gradYearMonth', '$degree', '$login_name', now())
 SQL;
 if (!$db->query($sqlInsert)) {
-   db_fatal_error("Insert failed", $db_error, $sqlInsert, $login_name);
+   db_fatal_error("Insert failed", $db->error, $sqlInsert, $login_name);
         exit($user_err_message);
 }
   //echo "New record created successfully";

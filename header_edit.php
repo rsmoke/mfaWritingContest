@@ -27,7 +27,7 @@ if ($isAdmin){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <?php include("_head.php"); ?>
 

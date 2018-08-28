@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <?php include("_head.php"); ?>
 
@@ -33,18 +33,20 @@ if ($result->num_rows > 0) {
 
 <?php include("_navbar.php");?>
 
-    <div class="container"><!--Container of all things -->
-    <div id="flashArea"><span class='flashNotify'>
-    <?php
-    if (isset($_SESSION['flashMessage'])) {
-        echo $_SESSION['flashMessage'];
-        $_SESSION['flashMessage'] = "";
-    }
-    ?></span></div>
 <?php
 if ($hasApplicantDetails) {
 ?>
-
+  <div class="container">
+    <div id="flashArea">
+      <span class='flashNotify'>
+      <?php
+      if (isset($_SESSION['flashMessage'])) {
+          echo $_SESSION['flashMessage'];
+          $_SESSION['flashMessage'] = "";
+      }
+      ?>
+      </span>
+    </div>
 <!-- CONTESTS AVAILABLE -->
 <!-- if there is a record for the logged in user in the database then display contests available -->
     <div class="row clearfix">
@@ -66,11 +68,11 @@ if ($hasApplicantDetails) {
                 <h5 class='p-1 bg-dark text-white'>How to submit an entry:</h5>
                 <ol>
                     <li>Click the ( <i class="fas fa-pencil-alt text-success"></i> ) button adjacent to the name of the contest you’d like to enter.</li>
-                    <li>Complete the form and click the ( <span class="btn btn-success btn-sm disabled">Upload Application</span> ) button.</li>
+                    <li>Complete the form and click the ( <button type='button' class="btn btn-success btn-sm" disabled>Upload Application</button> ) button.</li>
                     <li>Click the ( <i class="fas fa-file text-primary"></i> ) button to review your submission.</li>
                 </ol>
                 <ul>
-                    <li><span class="text-dark bg-warning"><em>NOTE: Be sure your profile is up to date before submitting your entry.</em></span> <a role="button" class="btn btn-outline-dark btn-sm" href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle fa-lg text-info"></i></a></li>
+                    <li><span class="text-dark bg-warning"><em>NOTE: Be sure your profile is up to date before submitting your entry.</em></span> <a role="button" type='button' class="btn btn-outline-dark btn-sm" href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><i class="fas fa-user-circle fa-lg text-info"></i></a></li>
                     <li><em>NOTE: The single file you upload needs to be in <strong>PDF format</strong> and it will include all the items required for the contest (e.g., Title page, manuscript, other documents)</em></li>
                     <li><em>NOTE: The pen name in your profile must match the one on your pdf; your real name may <u>not</u> be used.</em></li>
                     <li><em>NOTE: You will need to upload a separate application for each entry.</em></li>
@@ -111,62 +113,58 @@ if ($hasApplicantDetails) {
             </div>
         </div>
     </div>
-
+  </div>
 <?php
 } else {
 ?>
+  <div class="container"
         <!-- if there is not a record for $login_name display the basic information form. Upon submitting this data display the contest available section -->
-  <form id="formBasicInfo" action="insertApplicant.php" method="post">
+    <form id="formBasicInfo" action="insertApplicant.php" method="post">
         <div id="basicInfo" >
-            <div class="row clearfix">
-                <div class="col">
+          <div class="row clearfix">
+              <div class="col">
                 <h4 class="text-left text-muted">Before you can apply for a contest you need to enter some basic information about yourself</h4>
-
-
-                        <h5>NAME:</h5>
-                        <label for="userFname" >First name</label>
-                        <input id="applicantFname" class="form-control" type="text" tabindex="100" required name="userFname" value="<?php echo $userName[0];?>" autofocus />
-                        <label for="userLname">Last name</label>
-                        <input id="applicantLname" class="form-control" type="text" tabindex="110"required name="userLname" value="<?php echo $userName[1];?>" />
-                        <label for="umid">UMID</label>
-                        <input class="form-control" type="text" placeholder="enter your 8 digit UMID - example: 12345678" tabindex="120" required name="umid" pattern="(^\d{8}$)" title="enter an 8 digit UMID" />
-                        <label for="emailAddress">Campus eMail<br />
-                        <?php echo $login_name . "@umich.edu";?></label>
-                        <input class="form-control" type="hidden" required name="uniqname" value="<?php echo $login_name;?>" />
-
-                    <hr>
-                        <h5>ACADEMICS:</h5>
-                        I am a:
-                        <div id="classLevelSelect">
-                          <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="21"> First-Year
-                          </label>
-                          <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="22"> Second-Year
-                          </label>
-                          <label class="radio-inline">
-                            <input type="radio" id="inlineRadio1" name="classLevel" required value="23"> Zell-Fellow
-                          </label>
-                        </div>
-                        <label for="gradYear">Expected graduation date</label>
-                        <input class="date-picker form-control" id="gradYearMonth" tabindex="260" required name="gradYearMonth" />
-                        <label for="degree">Degree</label>
-                        <input class="form-control" type="text" tabindex="270" required name="degree" placeholder="example: Bachelors" />
-                    </div>
+                  <h5>NAME:</h5>
+                  <label for="userFname" >First name</label>
+                  <input id="applicantFname" class="form-control" type="text" tabindex="100" required name="userFname" value="<?php echo $userName[0];?>" autofocus />
+                  <label for="userLname">Last name</label>
+                  <input id="applicantLname" class="form-control" type="text" tabindex="110"required name="userLname" value="<?php echo $userName[1];?>" />
+                  <label for="umid">UMID</label>
+                  <input class="form-control" type="text" placeholder="enter your 8 digit UMID - example: 12345678" tabindex="120" required name="umid" pattern="(^\d{8}$)" title="enter an 8 digit UMID" />
+                  <label for="emailAddress">Campus eMail<br />
+                  <?php echo $login_name . "@umich.edu";?></label>
+                  <input class="form-control" type="hidden" required name="uniqname" value="<?php echo $login_name;?>" />
+                <hr>
+                <h5>ACADEMICS:</h5>
+                I am a:
+                <div id="classLevelSelect">
+                  <label class="radio-inline">
+                    <input type="radio" id="inlineRadio1" name="classLevel" required value="21"> First-Year
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" id="inlineRadio1" name="classLevel" required value="22"> Second-Year
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" id="inlineRadio1" name="classLevel" required value="23"> Zell-Fellow
+                  </label>
                 </div>
-            </div>
-                        <!-- //////////////////////////////// -->
-            <div class="row clearfix justify-content-center">
-              <div class="col-4 p-1 mb-2">
-                  <div class="btn-group" role="group">
-                    <button type="submit" id="applyBasicInfo" class='btn btn-success applyBtn'>Submit</button>
-                    <a id="cancel" role="button" class="btn btn-warning" href="index.php">Cancel</a>
-                  </div>
+                <label for="gradYearMonth">Expected graduation date</label>
+                <input class="date-picker" id="gradYearMonth" tabindex="260" required name="gradYearMonth" />
+                <label for="degree">Degree</label>
+                <input class="form-control" type="text" tabindex="270" required name="degree" placeholder="example: Fiction" />
               </div>
             </div>
-  </form>
-
-    </div><!-- End Container of all things -->
+          </div>
+        <div class="row clearfix justify-content-center">
+          <div class="col-4 p-1 mb-2">
+            <div class="btn-group" role="group">
+              <button type="submit" id="applyBasicInfo" class='btn btn-success applyBtn'>Submit</button>
+              <a id="cancel" role="button" class="btn btn-warning" href="index.php">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 <?php
 }
   include("_footer.php");

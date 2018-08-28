@@ -43,9 +43,10 @@ $( document ).ready(function(){
 	});
 
   $('.date-picker').datepicker( {
+        hideIfNoPrevNext: true,
         changeMonth: true,
         changeYear: true,
-        showButtonPanel: true,
+        showMonthAfterYear: true,
         dateFormat: 'yy-mm',
         onClose: function(dateText, inst) {
             var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();

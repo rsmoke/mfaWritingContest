@@ -6,7 +6,7 @@ $username = ldapgleaner($login_name);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <?php include("_head.php"); ?>
 

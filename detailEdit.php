@@ -49,7 +49,7 @@ switch ($classLevel) {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <?php include("_head.php"); ?>
 
@@ -88,9 +88,9 @@ switch ($classLevel) {
                </div>
 
               <label for="gradYear">Expected graduation date</label>
-              <input class="date-picker form-control" id="gradYearMonth" tabindex="260" required name="gradYearMonth" value="<?php echo $gradYearMonth;?>"  />
+              <input class="date-picker" id="gradYearMonth" tabindex="260" required name="gradYearMonth" value="<?php echo $gradYearMonth;?>"  />
               <label for="degree">Degree</label>
-              <input class="form-control" type="text" tabindex="270" required name="degree" value="<?php echo $degree;?>" placeholder="example: Bachelors" />
+              <input class="form-control" type="text" tabindex="270" required name="degree" value="<?php echo $degree;?>" placeholder="example: Fiction" />
           </div>
         </div>
       </div>

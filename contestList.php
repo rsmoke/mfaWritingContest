@@ -40,7 +40,7 @@ if (!$result = $db->query($sqlCurrentContest)) {
 }
 
 if (($result->num_rows > 0) && ($classLevel < 23)) {
-        echo "<table class='table table-responsive table-sm table-striped'>";
+        echo "<div class='table-responsive'><table class='table table-sm table-striped'>";
         echo "<thead class='thead-dark'><th>Contest</th><th>Apply</th></thead><tbody>";
     while ($row = $result->fetch_assoc()) {
            // if the contest is available to applicants classlevel the database fieldname will be set to 1 (true) and
@@ -54,7 +54,7 @@ if (($result->num_rows > 0) && ($classLevel < 23)) {
                   </tr>';
         }
     }
-        echo "</tbody></table>";
+        echo "</tbody></table></div>";
 } else {
         echo "There are currently no available contest";
 }
