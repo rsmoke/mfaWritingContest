@@ -42,16 +42,11 @@ $( document ).ready(function(){
 		window.location = useAppTemplate + '.php?id=' + useContest;
 	});
 
-  $('.date-picker').datepicker( {
-        hideIfNoPrevNext: true,
+  $('#gradYearMonth').datepicker( {
+        // hideIfNoPrevNext: true,
         changeMonth: true,
         changeYear: true,
         showMonthAfterYear: true,
-        dateFormat: 'yy-mm',
-        onClose: function(dateText, inst) {
-            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
-            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-            $(this).datepicker('setDate', new Date(year, month, 1));
-        }
+        dateFormat: 'yy-mm'
     });
 });

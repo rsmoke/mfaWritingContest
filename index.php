@@ -169,6 +169,6 @@ if ($hasApplicantDetails) {
 }
   include("_footer.php");
 ?>
-
+<script src="js/jquery-ui.min"</script>
 </body>
 </html>

@@ -11,8 +11,8 @@ body {
 	color: #888;
 	font-size: .9em;
 	font-style: italic;
-
 }
+
 #currentEntry {
   font-size: .9rem;
 }
@@ -20,11 +20,6 @@ body {
 #non_active_Entry {
   font-size: .8rem;
 }
-
-/* li {
-	margin-top: 5px;
-
-} */
 
 footer {
 	font-size: .6em;
@@ -50,14 +45,6 @@ footer a:hover {
 footer .mlogo {
 	width: 75px;
 	height: 75px;
-}
-
-.ui-datepicker-calendar {
-    display: none;
-}
-
-.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
-    color: transparent;
 }
 
 .fileUpload-group {
