@@ -27,11 +27,13 @@ if (isset($_POST['upload'])) {
         } else {
             //no contest matched ID so go back to index to allow user to reselect a contest
             non_db_error("no applicant matched ID! Exited application - Username=> " . $login_name, $login_name);
+            safeRedirect('index.php');
             exit();
         }
-        if ((!empty($_FILES["fileToUpload"])) && ($_FILES['fileToUpload']['error'] == 0) && (strlen(basename($_FILES["fileToUpload"]["name"])) < 250)) {
+
+        if ((!empty($_FILES['fileToUpload'])) && ($_FILES['fileToUpload']['error'] == 0) && (strlen(basename($_FILES['fileToUpload']['name'])) < 250)) {
             $target_dir = $_SERVER["DOCUMENT_ROOT"] . '/../mfacontestfiles/';
-            $filename = basename($_FILES["fileToUpload"]["name"]);
+            $filename = basename($_FILES['fileToUpload']['name']);
             $filename = preg_replace("/[^A-Za-z0-9\.]/", '', $filename);
             $target_file = getUTCTime() . "_" . $filename;
             //added 111215 to fix upload error due to special chars in name
@@ -61,11 +63,10 @@ if (isset($_POST['upload'])) {
                 $uploadOk = 0;
             }
             // Check file size is not larger than allowable
-            if ($_FILES["fileToUpload"]["size"] > $max_file_size) {
+            if ($_FILES['fileToUpload']['size'] > $max_file_size) {
                 $fileErrMessage = $fileErrMessage . " <br />=>Sorry, your file was too large.";
                 $uploadOk = 0;
             }
-
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
               // echo "File is wrong => " . $uploadOk;
@@ -259,6 +260,17 @@ SQL;
 
 <!-- if there is not a record display this stuff -->
 <?php include("_footer.php");?>
+
+<script>
+var uploadField = document.getElementById("fileToUpload");
+
+uploadField.onchange = function() {
+    if(this.files[0].size > 20971520){
+       alert("Your file is too big!");
+       this.value = "";
+    };
+};
+</script>
 
 </body>
 </html>
