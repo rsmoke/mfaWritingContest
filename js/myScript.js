@@ -49,4 +49,12 @@ $( document ).ready(function(){
         showMonthAfterYear: true,
         dateFormat: 'yy-mm'
     });
+
+    $("#adminAdd").click(function() {
+    //set up a regex string and test the textbox entry against.
+    var reg = /^[a-z]{1,8}$/;
+    if (!reg.test($("#myAdminForm :input").val())){
+           alert ("!! You did not enter a UMICH uniqname here !!");
+      }
+  });
 });
