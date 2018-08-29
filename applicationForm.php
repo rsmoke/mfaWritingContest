@@ -69,11 +69,8 @@ if (isset($_POST['upload'])) {
             }
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
-              // echo "File is wrong => " . $uploadOk;
                 $fileErrMessage = $fileErrMessage . " <br />=>Your file was not uploaded. Confirm the file is 20 megabytes or less and in PDF format.";
-                // echo $fileErrMessage;
                 $_SESSION['flashMessage'] = "<span class='text-danger'>Your file was not uploaded. Confirm the file is 20 megabytes or less and in PDF format.</span>";
-                // echo $_SESSION['flashMessage'];
                 $target_file = "empty";
                 non_db_error($fileErrMessage . "Username=> " . $login_name, $login_name);
                 exit($user_err_message . "<br />" . $fileErrMessage);
@@ -81,7 +78,6 @@ if (isset($_POST['upload'])) {
             } else {
                 // if everything is ok, try to upload file
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_full)) {
-                    echo "The file ". $target_file . " has been uploaded.";
                     $sqlInsert = <<<SQL
                       INSERT INTO `tbl_entry`
                           (`contestID`,
