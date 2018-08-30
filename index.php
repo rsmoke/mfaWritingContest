@@ -59,7 +59,7 @@ if ($hasApplicantDetails) {
                 if ($isAdmin){
                   $html = '<div class="btn-group" role="group" aria-label="Basic example">';
                     $html .= '<a role="button" class="btn btn-sm" href="header_edit.php" data-toggle="tooltip" data-placement="left" title="edit the contest description"><i class="fas fa-edit fa-sm text-warning"></i></a>';
-                    $html .= '<a role="button" class="btn btn-sm" href="contest_edit.php" data-toggle="tooltip" data-placement="left" title="edit the individual contests"><i class="fab fa-stack-overflow fa-sm text-primary"></i></a>';
+//                    $html .= '<a role="button" class="btn btn-sm" href="contest_edit.php" data-toggle="tooltip" data-placement="left" title="edit the individual contests"><i class="fab fa-stack-overflow fa-sm text-primary"></i></a>';
                     $html .= '<a role="button" class="btn btn-sm" href="admin_edit.php" data-toggle="tooltip" data-placement="left" title="edit the managers of this contest site"><i class="fas fa-lock fa-sm text-info"></i></a>';
                   $html .= '</div>';
                   echo $html;
