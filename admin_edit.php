@@ -70,7 +70,7 @@ SQL;
           while ($row = $resADM->fetch_assoc()) {
             $fullname = ldapGleaner($row['uniqname']);
             $html = '<div class="record">';
-            $html .= '<form action="#" method="post" >';
+            $html .= '<form action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method="post" >';
             $html .= '<input type="hidden" name="admin_uniq" value="' . $row['uniqname'] . '" />';
             $html .= '<strong>' . $fullname[0] . " " . $fullname[1] . '</strong>  -- ' . $row['uniqname'] .
               '<button type="submit" name="admin_delete" class="m-1 btn btn-sm btn-outline-light"><i class="fas fa-sm fa-trash text-danger"></i></button>';
