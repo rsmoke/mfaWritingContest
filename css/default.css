@@ -5,7 +5,9 @@
 body {
 	padding-top: 70px;
 }
-
+#manage_entries {
+	padding-top: 5px;
+}
 .notes {
 	padding: 0px 20px;
 	color: #888;
