@@ -18,8 +18,6 @@ if ($result->num_rows > 0) {
         $umid = $row["umid"];
         $uniqname = $row["uniqname"];
         $classLevel =  $row["classLevel"];
-        $gradYearMonth =  $row["gradYearMonth"];
-        $degree =  $row["degree"];
         $edited_on = $row["edited_on"];
     }
 } else {
@@ -86,11 +84,6 @@ switch ($classLevel) {
                         <input type="radio" id="zellfellowRad" name="classLevel" required value="23" <?php echo $zellfellowRadState  ?> > Zell-Fellow
                       </label>
                      </div>
-
-                    <label for="gradYear">Expected graduation date</label>
-                    <input class="date-picker" id="gradYearMonth" tabindex="260" required name="gradYearMonth" value="<?php echo $gradYearMonth;?>"  />
-                    <label for="degree">Degree</label>
-                    <input class="form-control" type="text" tabindex="270" required name="degree" value="<?php echo $degree;?>" placeholder="example: Fiction" />
                   </div>
                 </div>
               </div>

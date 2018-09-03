@@ -54,7 +54,7 @@ _SQL;
       <div class="col">
 
         <div id="instructions">
-          <p class='bg-info text-white'>These are the current individuals who are permitted to manage the <?php echo "$contestTitle";?> Application</p>
+          <p class='bg-info text-white text-center'>These are the current individuals who are permitted to manage the <?php echo "$contestTitle";?> Application</p>
         </div><!-- #instructions -->
         <div id="adminList">
           <?php

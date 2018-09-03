@@ -7,16 +7,12 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
     $userFname = $db->real_escape_string(htmlspecialchars($_POST["userFname"]));
     $userLname = $db->real_escape_string(htmlspecialchars($_POST["userLname"]));
     $classLevel =  htmlspecialchars($_POST["classLevel"]);
-    $gradYearMonth =  htmlspecialchars($_POST["gradYearMonth"]);
-    $degree =  $db->real_escape_string(htmlspecialchars($_POST["degree"]));
 
     $sql = <<<SQL
       UPDATE tbl_applicant
       SET userFname='$userFname',
         userLname='$userLname',
         classLevel='$classLevel',
-        gradYearMonth='$gradYearMonth',
-        degree='$degree',
         edited_by='$login_name'
       WHERE id='$applicantid' AND uniqname = '$login_name'
 SQL;

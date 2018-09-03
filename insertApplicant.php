@@ -8,14 +8,12 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
   $umid = htmlspecialchars($_POST["umid"]);
   $uniqname = htmlspecialchars($_POST["uniqname"]);
   $classLevel =  htmlspecialchars($_POST["classLevel"]);
-  $gradYearMonth =  htmlspecialchars($_POST["gradYearMonth"]);
-  $degree =  $db->real_escape_string(htmlspecialchars($_POST["degree"]));
 
   $sqlInsert = <<<SQL
   INSERT INTO `tbl_applicant` (`userFname`, `userLname`, `umid`, `uniqname`
-    ,`classLevel`, `gradYearMonth`, `degree`, `created_by`, `created_on`)
+    ,`classLevel`, `created_by`, `created_on`)
   VALUES ('$userFname', '$userLname', '$umid', '$uniqname'
-    , '$classLevel', '$gradYearMonth', '$degree', '$login_name', now())
+    , '$classLevel', '$login_name', now())
 SQL;
 if (!$db->query($sqlInsert)) {
    db_fatal_error("Insert failed", $db->error, $sqlInsert, $login_name);

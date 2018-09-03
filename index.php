@@ -153,10 +153,6 @@ if ($hasApplicantDetails) {
                     <input type="radio" id="inlineRadio1" name="classLevel" required value="23"> Zell-Fellow
                   </label>
                 </div>
-                <label for="gradYearMonth">Expected graduation date</label>
-                <input class="date-picker" id="gradYearMonth" tabindex="260" required name="gradYearMonth" />
-                <label for="degree">Degree</label>
-                <input class="form-control" type="text" tabindex="270" required name="degree" placeholder="example: Fiction" />
               </div>
             </div>
           </div>
