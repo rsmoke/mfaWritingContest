@@ -107,6 +107,5 @@ switch ($classLevel) {
 
 <?php include("_footer.php");?>
   </div><!--End Container of all things -->
-  <script src="js/jquery-ui.min"</script>
 </body>
 </html>
