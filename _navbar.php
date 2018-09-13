@@ -9,10 +9,10 @@
 
         <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Signed in as: <span style='color:dodgerblue;'><?php echo $login_name;?></span></a>
         <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="detailEdit.php" data-toggle="tooltip" data-placement="left" title="open your profile"><span class="text-info"><i class="fas fa-user-circle fa-2x"></i></span></a>
-          <a class="dropdown-item" href="https://weblogin.umich.edu/cgi-bin/logout" data-toggle="tooltip" data-placement="left" title="sign-out"><span class="text-danger"><i class="fas fa-sign-out-alt fa-2x"></i></span></a>
+          <a class="dropdown-item toolytip" href="detailEdit.php"><span class="tooltiptext" style="right: 70%;">open your profile</span><span class="text-info"><i class="fas fa-user-circle fa-lg"></i></span></a>
+          <a class="dropdown-item toolytip" href="https://weblogin.umich.edu/cgi-bin/logout"><span class="tooltiptext" style="background-color: #DC3545; right: 70%;">Sign-out</span><span class="text-danger"><i class="fas fa-sign-out-alt fa-lg"></i></span></a>
         </div>
-        <a class="nav-item nav-link active ml-auto bg-primary text-white rounded" href="mailComment.php" data-toggle="tooltip" data-placement="left" title="send us your questions or comments"><i class="fas fa-question fa-lg"></i></a>
+        <a class="nav-item nav-link active ml-auto bg-primary text-white rounded toolytip" href="mailComment.php"><span class="tooltiptext" style="background-color: #0062CC;">Need help?</span><i class="fas fa-question fa-lg"></i></a>
       </div>
     </div>
   </nav>

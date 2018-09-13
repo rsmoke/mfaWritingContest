@@ -50,7 +50,7 @@ if (($result->num_rows > 0) && ($classLevel < 23)) {
                   $row["ContestsName"] . '</strong><br /><span class="notes">' .
                   $row["contests_notes"] . '</span></td>
                   <td><button type="button" data-contest-num="' . $row["contestid"] .
-                  '" class="btn btn-sm btn-outline-success applyBtn"><i class="fas fa-pencil-alt text-success"></i></button></td>
+                  '" class="btn btn-sm btn-outline-success applyBtn"><i class="fas fa-pencil-alt"></i></button></td>
                   </tr>';
         }
     }
