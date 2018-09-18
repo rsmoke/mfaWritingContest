@@ -16,12 +16,12 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
                     echo $row['contestName'] . "</td><td>";
                     echo $row['title'] . "</td><td>";
                     echo date("F jS, Y  g:i A", (strtotime($row['datesubmitted']))) . "</td>";
-                    echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank' data-toggle='tooltip' data-placement='left' title='opens in a new browser window'><i class='fas fa-file text-primary'></i></a></td>";
-                    echo "<td class='btnIcon'><button type='button' class='btn btn-outline-danger btn-sm ";
+                    echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank' class='toolytip'><span class='tooltiptext' style='background-color: #007BFF;'>opens in a new browser window</span><i class='fas fa-file text-primary'></i></a></td>";
+                    echo "<td class='btnIcon'><button type='button' class='btn btn-outline-danger btn-sm toolytip";
 
                     echo date("Y-m-d H:i:s") > $row['date_closed']? ' disabled ' : '';
 
-                    echo " applicantdeletebtn' data-entryid='" . $row['EntryId'] . "' data-toggle='tooltip' data-placement='left' title='you are able to remove an entry up to the close of the contest'><i class='fas fa-trash'></i></button></td></tr>";
+                    echo " applicantdeletebtn' data-entryid='" . $row['EntryId'] . "' ><span class='tooltiptext' style='background-color: #DC3545;'>remove entry</span><i class='fas fa-trash'></i></button></td></tr>";
                 }
                   echo "</tbody></table></div>";
             } else {

@@ -27,7 +27,7 @@ if ($result->num_rows > 0 ){
         echo $row['contestName'] . "</td><td>";
         echo $row['title'] . "</td><td>";
         echo date("F jS, Y  g:i A", (strtotime($row['datesubmitted']))) . "</td>";
-        echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank' data-toggle='tooltip' data-placement='left' title='opens in a new browser window'><i class='fas fa-file text-primary'></i></a></td>";
+        echo "<td class='btnIcon'><a href='fileholder.php?file=" . $row['document'] . "' target='_blank' class='toolytip'><span class='tooltiptext' style='background-color: #007BFF;'>opens in a new browser window</span><i class='fas fa-file text-primary'></i></a></td>";
         echo "<td>" . $status_notice  . "</td></tr>";
     }
       echo "</tbody></table></div>";

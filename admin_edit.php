@@ -86,14 +86,14 @@ SQL;
 
     <div class="row clearfix">
       <div class="col">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-          <div id="myAdminForm"><!-- add Admin -->
+        <form id="myAdminForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
+
             To add an Administrator please enter their <b>uniqname</b> below:<br>
-            <input class="form_control" type="text" name="admin_uniq" />
+            <input class="form_control" type="text" id="admin_uniq" name="admin_uniq" />
             <button type="submit"  name="admin_add" class=" m-1 btn btn-info btn-sm" id="adminAdd">Add Administrator</button>
             <br />
             <i>--look up uniqnames using the <a href="https://mcommunity.umich.edu/" target="_blank">Mcommunity directory</a>--</i>
-          </div>
+
           <!-- //////////////////////////////// -->
         </form><!-- add Admin -->
       </div>
