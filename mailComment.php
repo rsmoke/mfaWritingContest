@@ -19,12 +19,12 @@ $username = ldapgleaner($login_name);
         <div class="col-8 jumbotron">
 
 <?php if(isset($_POST['submit'])){
-    $to = "um_ricks+p8lizbzwi3rwjww5f8vh@boards.trello.com, hopwoodcontestnotify@umich.edu"; // this is your Email address
+    $to = "mfacontestnotify@umich.edu"; // this is your Email address
     $from = htmlspecialchars($_POST['email']); // this is the sender's Email address
     $first_name = htmlspecialchars($_POST['first_name']);
     $last_name = htmlspecialchars($_POST['last_name']);
-    $subject = "Hopwood WritingContest - " . htmlspecialchars($_POST['topic']) . " email=> " . $from . " " . date("Y/m/d h:i:sa");
-    $subject2 = "Copy of your Hopwood WritingContest comment or question form submission";
+    $subject = "MFA WritingContest - " . htmlspecialchars($_POST['topic']) . " email=> " . $from . " " . date("Y/m/d h:i:sa");
+    $subject2 = "Copy of your MFA WritingContest comment or question form submission";
     $messageFooter = "-- Please do not reply to this email. If you requested a reply or if we need more information, we will contact you at the email address you provided. --";
     $message = "logged in as=> " . $login_name . " " . $first_name . " " . $last_name . " email=> " . $from . " wrote the following:" . "\n\n" . htmlspecialchars($_POST['message']);
     $message2 = "Here is a copy of your message " . $first_name . ":\n\n" . htmlspecialchars($_POST['message']) . "\n\n" . $messageFooter;
