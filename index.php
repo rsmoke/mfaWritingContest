@@ -58,9 +58,9 @@ if ($hasApplicantDetails) {
                 } else { echo ''; }
                 if ($isAdmin){
                   $html = '<div class="btn-group" role="group" aria-label="Basic example">';
-                    $html .= '<a role="button" class="btn btn-sm toolytip" href="header_edit.php"><span class="tooltiptext" style="background-color: #FFC107; left: 100%;">edit description</span><i class="fas fa-edit fa-sm text-warning"></i></a>';
-//                    $html .= '<a role="button" class="btn btn-sm" href="contest_edit.php" data-toggle="tooltip" data-placement="left" title="edit the individual contests"><i class="fab fa-stack-overflow fa-sm text-primary"></i></a>';
-                    $html .= '<a role="button" class="btn btn-sm toolytip" href="admin_edit.php"><span class="tooltiptext" style="background-color: #17A2B8; left: 100%;">manage admins</span><i class="fas fa-lock fa-sm text-info"></i></a>';
+                  $html .= '<a role="button" class="btn btn-sm toolytip" href="header_edit.php"><span class="tooltiptext" style="background-color: #FFC107; left: 100%;">edit description</span><i class="fas fa-edit fa-sm text-warning"></i></a>';
+                  $html .= '<a role="button" class="btn btn-sm toolytip" href="contest_admin.php"><span class="tooltiptext" style="background-color: #1987FF; left: 100%;">manage contests</span><i class="fab fa-stack-overflow fa-sm text-primary"></i></a>';
+                  $html .= '<a role="button" class="btn btn-sm toolytip" href="admin_edit.php"><span class="tooltiptext" style="background-color: #17A2B8; left: 100%;">manage admins</span><i class="fas fa-lock fa-sm text-info"></i></a>';
                   $html .= '</div>';
                   echo $html;
                 }
