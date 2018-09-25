@@ -55,7 +55,12 @@ _SQL;
 
         <div id="instructions">
           <p class='bg-info text-white text-center'>These are the current individuals who are permitted to manage the <?php echo "$contestTitle";?> Application</p>
+          <a href="index.php" role="button" class="btn btn-sm btn-success">
+              <i class="fas fa-arrow-alt-circle-left"></i>
+              return to main page
+          </a>
         </div><!-- #instructions -->
+        <hr>
         <div id="adminList">
           <?php
           $sqlAdmSel = <<<SQL
