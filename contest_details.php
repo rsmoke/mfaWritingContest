@@ -6,39 +6,39 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if ($isAdmin){
   $contestID = $_GET["contestID"];
-//
-//   // admin deletion section
-//   if (isset($_POST["admin_delete"])) {
-//     $admin_uniq =  htmlspecialchars($_POST['admin_uniq']);
-//     if ($admin_uniq != 'rsmoke') {
-//         $sqlDeleteAdmin = <<< _SQL
-//             DELETE FROM tbl_contestadmin
-//             WHERE uniqname = '$admin_uniq';
-// _SQL;
-//
-//         if (!$result= $db->query($sqlDeleteAdmin)) {
-//             db_fatal_error("data delete issue", $db->error, $sqlDeleteAdmin ,$login_name);
-//             exit;
-//         }
-//
-//         // echo "Deleted admin ID: " . $idSent;
-//     }
-//     unset($_POST["admin_delete"]);
-//     unset($_POST["admin_uniq"]);
-//   }
-//
-//   if (isset($_POST["admin_add"])) {
-//     $admin_uniq = $db->real_escape_string(htmlspecialchars($_POST['admin_uniq']));
-//     if ((in_array($admin_uniq, $admins) == false) && (preg_match('/^[a-z]{1,8}$/',$admin_uniq))){
-//       $sqlAdminAdd = "INSERT INTO tbl_contestadmin (edited_by, uniqname) VALUES('$login_name','$admin_uniq')";
-//       if (!$result = $db->query($sqlAdminAdd)) {
-//               db_fatal_error("data insert issue", $db->error, $sqlAdminAdd, $login_name);
-//               exit($user_err_message);
-//       }
-//     }
-//     unset($_POST["admin_add"]);
-//     unset($_POST["admin_uniq"]);
-//   }
+  settype($contestID, "int");
+
+  if (isset($_POST["disq-entryid"]) && isset($_POST["disq-entry"])) {
+    $disqualify_entry = $_POST["disq-entryid"];
+    settype($disqualify_entry, "int");
+    $sqlDDisqEntry = <<< _DISQSQL
+                UPDATE tbl_entry SET status = 3
+                WHERE id = $disqualify_entry AND contestID = $contestID;
+_DISQSQL;
+
+  if (!$result= $db->query($sqlDDisqEntry)) {
+      db_fatal_error("data delete issue", $db->error, $sqlDDisqEntry ,$login_name);
+      exit;
+  }
+  unset($_POST["disq-entry"]);
+  }
+
+  $sqlContestDetail = <<<SQL
+  SELECT *
+  FROM vw_entrydetail
+  WHERE ContestInstance = $contestID AND Status = 0
+  ORDER BY EntryID
+SQL;
+
+  if (!$result = $db->query($sqlContestDetail)) {
+  db_fatal_error("data read issue", $db->error, $sqlContestDetail, $login_name);
+  exit;
+  }
+
+  $result->data_seek(0);
+
+  $firstRow = $result->fetch_row();
+  $contestName = $firstRow[8];
 }
 
 ?>
@@ -55,49 +55,66 @@ if ($isAdmin){
       <div class="col">
 
         <div id="instructions">
-          <p class='bg-info text-white text-center'>These are the current 'Active' contest instances in the <?php echo "$contestTitle";?> Application</p>
+          <p class='bg-primary text-white text-center'>These are the current 'Active' contest entries for the <?php echo "$contestName";?></p>
+          <a href="contest_admin.php" role="button" class="btn btn-sm btn-success">
+              <i class="fas fa-arrow-alt-circle-left"></i>
+              return to contest list
+          </a>
         </div><!-- #instructions -->
+        <hr>
         <div id="activeContestList">
           <?php
-          $sqlContestDetail = <<<SQL
-          SELECT *
-          FROM vw_entrydetail
-          WHERE ContestInstance = $contestID AND Status = 0
-          ORDER BY EntryID
-SQL;
+            $result->data_seek(0);
+              while ($row = $result->fetch_assoc()) {
+                $html = '<div class="card">
+                          <div class="card-header">
+                            <small class="text-muted">'
+                            . $row['EntryId'] .
+                            '</small>
+                            <a
+                              href="fileholder.php?file=' . $row['document'] .
+                              '" target="_blank"
+                              class="btn btn-sm btn-outline-primary toolytip">
+                              <span
+                                class="tooltiptext"
+                                style="background-color: #007BFF;right: 0%; left: 110%; width: 125px;">
+                                  open in new window
+                              </span>
+                              <i class="fas fa-file"></i>
+                            </a> <sup class="text-muted">Title: </sup>'
+                            . $row['title'] . '
+                          </div>
+                          <div class="card-body">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-4"><sup class="text-muted">Name: </sup>' . $row['firstname'] . ' ' . $row['lastname'] . '</div>
+                              <div class="col"><sup class="text-muted">Uniq: </sup> ' . $row['uniqname']. '</div>
+                              <div class="col"><sup class="text-muted">UMID: </sup>' . $row['UMID'] . '</div>
+                              <div class="col">
+                              <form enctype="multipart/form-data" action="'. htmlspecialchars($_SERVER["PHP_SELF"]) . '?contestID=' . $row['ContestInstance'] . '" method="post">
+                                  <input type="hidden" name="disq-entryid" value="' . $row['EntryId'] .'"/>
+                                  <span class="toolytip">
+                                    <button type="submit" name="disq-entry" value="" class="btn btn-sm btn-outline-warning" id="hyperlink-style-button">
+                                      <span class="tooltiptext"
+                                        style="background-color: #F7BB07;">
+                                        disqualify entry
+                                      </span>
+                                      <i class="fas fa-ban"></i>
+                                    </button>
+                                  </span>
+                                </form>
+                              </div>
 
-          if (!$result = $db->query($sqlContestDetail)) {
-          db_fatal_error("data read issue", $db->error, $sqlContestDetail, $login_name);
-          exit;
-          }
-            $html = '<p>' . $row['ContestsName'] . '</p>';
-                while ($row = $result->fetch_assoc()) {
-            $html .= '<div class="card">
-                        <div class="card-body">
-                        <div class="card-text">' . $row['EntryId'] . '</div>
-                        </div>
-                      </div>';
-                }
-            echo $html;
+                            </div>
+                          </div>
 
+                          </div>
+                        </div>';
+                echo $html;
+              }
           ?>
         </div>
 
-      </div>
-    </div>
-
-    <div class="row clearfix">
-      <div class="col">
-        <div class="pastContestList">Past contest instances</div>
-        <!-- <form id="myAdminForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-
-            To add an Administrator please enter their <b>uniqname</b> below:<br>
-            <input class="form_control" type="text" id="admin_uniq" name="admin_uniq" />
-            <button type="submit"  name="admin_add" class=" m-1 btn btn-info btn-sm" id="adminAdd">Add Administrator</button>
-            <br />
-            <i>--look up uniqnames using the <a href="https://mcommunity.umich.edu/" target="_blank">Mcommunity directory</a>--</i>
-
-        </form><!-- add Admin -->
       </div>
     </div>
   </div>

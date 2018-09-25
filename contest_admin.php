@@ -5,39 +5,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if ($isAdmin){
-//
-//   // admin deletion section
-//   if (isset($_POST["admin_delete"])) {
-//     $admin_uniq =  htmlspecialchars($_POST['admin_uniq']);
-//     if ($admin_uniq != 'rsmoke') {
-//         $sqlDeleteAdmin = <<< _SQL
-//             DELETE FROM tbl_contestadmin
-//             WHERE uniqname = '$admin_uniq';
-// _SQL;
-//
-//         if (!$result= $db->query($sqlDeleteAdmin)) {
-//             db_fatal_error("data delete issue", $db->error, $sqlDeleteAdmin ,$login_name);
-//             exit;
-//         }
-//
-//         // echo "Deleted admin ID: " . $idSent;
-//     }
-//     unset($_POST["admin_delete"]);
-//     unset($_POST["admin_uniq"]);
-//   }
-//
-//   if (isset($_POST["admin_add"])) {
-//     $admin_uniq = $db->real_escape_string(htmlspecialchars($_POST['admin_uniq']));
-//     if ((in_array($admin_uniq, $admins) == false) && (preg_match('/^[a-z]{1,8}$/',$admin_uniq))){
-//       $sqlAdminAdd = "INSERT INTO tbl_contestadmin (edited_by, uniqname) VALUES('$login_name','$admin_uniq')";
-//       if (!$result = $db->query($sqlAdminAdd)) {
-//               db_fatal_error("data insert issue", $db->error, $sqlAdminAdd, $login_name);
-//               exit($user_err_message);
-//       }
-//     }
-//     unset($_POST["admin_add"]);
-//     unset($_POST["admin_uniq"]);
-//   }
 }
 
 ?>
@@ -54,12 +21,12 @@ if ($isAdmin){
       <div class="col">
 
         <div id="instructions">
-          <p class='bg-info text-white text-center'>These are the current 'Active' contest instances in the <?php echo "$contestTitle";?> Application</p>
+          <p class='bg-primary text-white text-center'>These are the current 'Active' contest instances in the <?php echo "$contestTitle";?> Application</p>
         </div><!-- #instructions -->
         <div id="activeContestList">
           <?php
           $sqlCurrentContest = <<<SQL
-          SELECT *
+          SELECT ContestsName,ttlCount,date_open,date_closed,contestid
           FROM vw_contestlisting_plusttlcounts
           ORDER BY ContestsName
 SQL;
@@ -73,8 +40,12 @@ SQL;
             $html .= '<div class="card">
                         <div class="card-header">' . $row['ContestsName'] . '</div>
                         <div class="card-body">
-                          <p class="card-text">Current number of entries: ' . $row['ttlCount'] . '</p>
-                          <a href="contest_details.php?contestID=' . $row['contestid'] . '" class="btn btn-primary btn-sm">View Details</a>
+                          <ul class="list-group list-group-flush small">
+                            <li class="list-group-item">Current number of entries: <strong>' . $row['ttlCount'] . '</strong></li>
+                            <li class="list-group-item">Open date: <strong>' . date("j F Y", strtotime($row["date_open"])) . '</strong></li>
+                            <li class="list-group-item">Close date: <strong>' . date("j F Y", strtotime($row["date_closed"])) . '</strong></li>
+                          </ul>
+                          <a href="contest_details.php?contestID=' . $row['contestid'] . '" class="btn btn-primary btn-sm">View Entries</a>
                         </div>
                       </div>';
                 }
@@ -90,15 +61,6 @@ SQL;
     <div class="row clearfix">
       <div class="col">
         <div class="pastContestList">Past contest instances</div>
-        <!-- <form id="myAdminForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-
-            To add an Administrator please enter their <b>uniqname</b> below:<br>
-            <input class="form_control" type="text" id="admin_uniq" name="admin_uniq" />
-            <button type="submit"  name="admin_add" class=" m-1 btn btn-info btn-sm" id="adminAdd">Add Administrator</button>
-            <br />
-            <i>--look up uniqnames using the <a href="https://mcommunity.umich.edu/" target="_blank">Mcommunity directory</a>--</i>
-
-        </form><!-- add Admin -->
       </div>
     </div>
   </div>
