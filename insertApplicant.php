@@ -9,6 +9,13 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
   $uniqname = htmlspecialchars($_POST["uniqname"]);
   $classLevel =  htmlspecialchars($_POST["classLevel"]);
 
+  settype($userFname, "string");
+  settype($userLname, "string");
+  settype($umid, "string");
+  settype($uniqname, "string");
+  settype($classLevel, "int");
+
+
   $sqlInsert = <<<SQL
   INSERT INTO `tbl_applicant` (`userFname`, `userLname`, `umid`, `uniqname`
     ,`classLevel`, `created_by`, `created_on`)
