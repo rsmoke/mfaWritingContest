@@ -60,7 +60,7 @@ SQL;
 
     <div class="row clearfix">
       <div class="col">
-        <div class="pastContestList">Past contest instances</div>
+        <div class="pastContestList"></div>
       </div>
     </div>
   </div>
