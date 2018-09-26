@@ -9,17 +9,16 @@ if ($isAdmin){
   settype($contestID, "int");
 
   if (isset($_POST["disq-entryid"]) && isset($_POST["disq-entry"])) {
-    $disqualify_entry = $_POST["disq-entryid"];
-    settype($disqualify_entry, "int");
-    $sqlDDisqEntry = <<< _DISQSQL
-                UPDATE tbl_entry SET status = 3
-                WHERE id = $disqualify_entry AND contestID = $contestID;
-_DISQSQL;
-
-  if (!$result= $db->query($sqlDDisqEntry)) {
-      db_fatal_error("data delete issue", $db->error, $sqlDDisqEntry ,$login_name);
-      exit;
+    try {
+    $stmt = $db->prepare("UPDATE tbl_entry SET status = 3 WHERE id = ? AND contestID = ?;");
+    $stmt->bind_param("ii", $_POST["disq-entryid"], $contestID);
+    $stmt->execute();
+  } catch(Exception $e) {
+    db_fatal_error("data update issue", $e->getMessage(), $sqlDisqEntry ,$login_name);
+    exit();
   }
+  $stmt->close();
+
   unset($_POST["disq-entry"]);
   }
 
@@ -64,6 +63,8 @@ SQL;
         <hr>
         <div id="activeContestList">
           <?php
+            $row_count = $result->num_rows;
+            if ($row_count > 0 ){
             $result->data_seek(0);
               while ($row = $result->fetch_assoc()) {
                 $html = '<div class="card">
@@ -112,6 +113,9 @@ SQL;
                         </div>';
                 echo $html;
               }
+            } else{
+              echo "<p> There are no entries in this contest";
+            }
           ?>
         </div>
 
