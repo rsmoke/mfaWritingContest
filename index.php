@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 <?php include("_head.php"); ?>
 
 <body>
-
+<noscript><h4 class="text-white bg-danger px-2 mx-4">Your browser does not have JavaScript support enabled! <a href="https://www.enable-javascript.com/" target="_blank">Enable JavaScript</a> to use this site.</h4></noscript>
 <?php include("_navbar.php");?>
 
 <?php
