@@ -80,13 +80,5 @@ SQL;
 
 include("_footer.php"); ?>
 
-You need to send the ID as the function parameters. Do it like this:
-
-<!-- <script type="text/javascript">
-function reply_click(clicked_id)
-{
-    alert(clicked_id);
-}
-</script> -->
 </body>
 </html>
