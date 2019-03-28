@@ -157,3 +157,22 @@
         }
     };
   }
+
+  function contestToggle(clicked_id)
+  {
+    var toggle_action = "";
+    var customswitch = document.querySelector("#customSwitch" + clicked_id );
+    if (customswitch.checked){
+      toggle_action = 1;
+    } else {
+      toggle_action = 0
+    }
+    console.log("set contest " + clicked_id + " record to judging " + toggle_action);
+    zlFetch("toggle_contest.php", {
+      method: "post",
+      body: {
+        contest_id: clicked_id,
+        contest_action: toggle_action
+      }
+    });
+  }
