@@ -157,3 +157,14 @@
         }
     };
   }
+
+  function reply_click(clicked_id)
+  {
+    var customswitch = document.querySelector("#customSwitch" + clicked_id );
+    // console.dir(customswitch);
+    if (customswitch.checked){
+      console.log("set contest " + clicked_id + " record to judging open");
+    } else {
+      console.log("set contest " + clicked_id + " record to judging closed");
+    }
+  }
