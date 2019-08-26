@@ -176,3 +176,15 @@
       }
     });
   }
+
+  function archiveContest(archive_id)
+  {
+    console.log("archive contest " + archive_id + " record to contest ");
+    zlFetch("archive_contest.php", {
+      method: "post",
+      body: {
+        contest_id: archive_id
+      }
+    });
+    window.location.replace("../contest_admin.php");
+  }
