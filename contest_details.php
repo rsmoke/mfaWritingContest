@@ -25,7 +25,7 @@ if ($isAdmin){
   $sqlContestDetail = <<<SQL
   SELECT *
   FROM vw_entrydetail
-  WHERE ContestInstance = $contestID AND Status = 0
+  WHERE ContestInstance = $contestID AND Status IN (0,2)
   ORDER BY EntryID
 SQL;
 
