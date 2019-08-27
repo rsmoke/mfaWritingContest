@@ -5,7 +5,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if ($isAdmin){
-}
 
 ?>
 <!DOCTYPE html>
@@ -16,8 +15,8 @@ if ($isAdmin){
 <body>
   <?php include("_navbar.php");?>
   <div class='container'>
-<?php if ($isAdmin){ ?>
-    <div class="row clearfix border border-success">
+    <div id="flashArea"><?php echo $_SESSION['flashMessage']; ?></div>
+    <div class="row clearfix border border-success pb-2 ">
       <div class="col">
 
         <div id="instructions">
@@ -29,12 +28,12 @@ if ($isAdmin){
 
       </div>
     </div>
-<hr class="w-50">
-    <div class="row clearfix border border-warning">
+    <hr class="w-50">
+    <div class="row clearfix border border-warning pb-2 ">
       <div class="col">
 
         <div id="past_instructions">
-          <p class='bg-warning text-balck text-center'>These are the past contest instances in the <?php echo "$contestTitle";?> Application</p>
+          <p class='bg-warning text-black text-center'>These are the past contest instances in the <?php echo "$contestTitle";?> Application</p>
         </div><!-- #instructions -->
         <div class="pastContestList">
           <?php include('pastContestList.php') ?>
@@ -43,9 +42,15 @@ if ($isAdmin){
     </div>
   </div>
 
-<?php } else { redirect_to(); }
+<?php 
+  $_SESSION['flashMessage'] = "";
+} else { redirect_to(); }
 
 include("_footer.php"); ?>
-
+<script>
+  $(document).ready(function(){
+    $("#flashArea").fadeOut(7000);
+  });
+</script>
 </body>
 </html>

@@ -50,6 +50,8 @@ SQL;
   <?php include("_navbar.php");?>
   <div class='container'>
 <?php if ($isAdmin){ ?>
+    <div id="flashArea"><span class='flashNotify'><?php echo $_SESSION['flashMessage']; $_SESSION['flashMessage'] = ""; ?></span></div>
+
     <div class="row clearfix">
       <div class="col">
 
