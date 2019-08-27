@@ -10,7 +10,9 @@ SQL;
           db_fatal_error("data read issue", $db->error, $sqlCurrentContest, $login_name);
           exit;
           }
-            $html = '<div class="card-deck">';
+          $html = "";
+          if ($result->num_rows > 0 ) {
+            $html .= '<div class="card-deck">';
                 while ($row = $result->fetch_assoc()) {
                   $ischecked = ($row['judgingOpen'] == 1 ) ? "checked" : " ";
             $html .= '<div class="card">
@@ -35,4 +37,7 @@ SQL;
                       </div>';
                 }
             $html .= '</div>';
-            echo $html;
+          } else {
+            $html .= '<div><h4>There are no archived contests currently</h4></div>';
+          }
+          echo $html;
