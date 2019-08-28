@@ -94,8 +94,6 @@
     document.body.onload = messageElement;
   }
 
-  // $('.flashNotify').fadeOut(6000);
-
   if (document.getElementById('flashNotify')){
     var el = document.getElementById('flashNotify');
     FX.fadeOut(el, {
@@ -167,7 +165,6 @@
     } else {
       toggle_action = 0
     }
-    console.log("set contest " + clicked_id + " record to judging " + toggle_action);
     zlFetch("toggle_contest.php", {
       method: "post",
       body: {
@@ -179,7 +176,6 @@
 
   function archiveContest(archive_id)
   {
-    console.log("archive contest " + archive_id + " record to contest ");
     zlFetch("archive_contest.php", {
       method: "post",
       body: {
