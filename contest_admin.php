@@ -15,7 +15,9 @@ if ($isAdmin){
 <body>
   <?php include("_navbar.php");?>
   <div class='container'>
-    <div id="flashArea"><?php echo $_SESSION['flashMessage']; ?></div>
+    <div id='flashbox' class='row clearfix '>
+      <div id="flashArea"><?php echo $_SESSION['flashMessage']; ?></div>
+    </div>
     <div class="row clearfix border border-success pb-2 ">
       <div class="col">
 
@@ -43,14 +45,18 @@ if ($isAdmin){
   </div>
 
 <?php 
-  $_SESSION['flashMessage'] = "";
 } else { redirect_to(); }
 
 include("_footer.php"); ?>
 <script>
   $(document).ready(function(){
-    $("#flashArea").fadeOut(7000);
+    var flashmessage = "<?php echo $_SESSION['flashMessage'];?>";
+    console.log(flashmessage);
+    if ( flashmessage.length > 0 ){
+      $("#flashArea").fadeOut(7000);
+    }
   });
 </script>
+<?php $_SESSION['flashMessage'] = ''; ?>
 </body>
 </html>
