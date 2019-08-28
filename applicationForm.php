@@ -235,7 +235,7 @@ SQL;
         ?>
 
         <label for="title">Title of submission</label>
-        <input class="form-control" type="text" required name="title" />
+        <input class="form-control" type="text" required name="title" autofocus />
 
         <div class="form-group fileUpload-group">
           <label class="control-label" for="fileToUpload">Select file to upload (it must be in PDF format and under 20Mbytes in size):</label>
