@@ -3,6 +3,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/configEnglishMFAContest.ph
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+    $_SESSION['flashMessage'] = '';
 }
 if ($isAdmin){
 
