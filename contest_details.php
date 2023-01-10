@@ -3,6 +3,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/configEnglishMFAContest.ph
 require_once($_SERVER["DOCUMENT_ROOT"] . '/../Support/basicLib.php');
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+    $_SESSION['flashMessage'] = '';
 }
 if ($isAdmin){
   $contestID = $_GET["contestID"];
@@ -34,10 +35,21 @@ SQL;
   exit;
   }
 
-  $result->data_seek(0);
+  $sqlContestName = <<<SQL
+  SELECT ContestsName
+  FROM vw_contestlisting_plusttlcounts
+  WHERE contestid = $contestID AND Status IN (0,2)
+SQL;
 
-  $firstRow = $result->fetch_row();
-  $contestName = $firstRow[8];
+  if (!$nameresult = $db->query($sqlContestName)) {
+  db_fatal_error("data read issue", $db->error, $sqlContestName, $login_name);
+  exit;
+  }
+  
+  $nameresult->data_seek(0);
+
+  $firstRow = $nameresult->fetch_row();
+  $contestName = $firstRow[0];
 }
 
 ?>
